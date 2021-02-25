@@ -22,20 +22,22 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {defineComponent, ref} from 'vue';
 
 export default defineComponent({
   name: "Navbar",
-  data() {
-    return {
-      status: "Home"
-    }
-  },
-  methods: {
-    updateStatus: function (label: string) {
-      this.status = label;
-      this.$emit('clicked', this.status);
-      return this.status;
+  setup(props, context){
+    const status = ref<string>("Home");
+
+    const updateStatus = (label: string) => {
+      status.value = label;
+      context.emit('clicked', status.value);
+      return status.value;
+    };
+
+    return{
+      status,
+      updateStatus
     }
   }
 })

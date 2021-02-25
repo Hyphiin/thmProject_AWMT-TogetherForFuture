@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Navbar @clicked="onClickChild"/>
+    <Navbar @clicked="onClickNav"/>
 
     <div v-if="siteComponent==='Home'">
       <Landingpage/>
@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref , computed} from 'vue';
 import Navbar from './components/Navbar.vue';
 import Landingpage from "@/components/landingpage/Landingpage.vue";
 import ClimateFacts from "@/components/climatefacts/ClimateFacts.vue";
@@ -50,20 +50,21 @@ export default defineComponent({
     Projects,
     Team
   },
-  data(){
+  setup(){
+    const siteComponent = ref<string>("Home");
+
+    const onClickNav = (value: string) => {
+      siteComponent.value = value;
+    }
+
+    const changeStatus = computed(() => {
+      return siteComponent.value;
+    })
+
     return{
-      siteComponent: "Home"
-    }
-  },
-  methods:{
-    onClickChild (value: string) {
-      this.siteComponent = value
-      console.log(value) // someValue
-    }
-  },
-  computed: {
-    changeStatus(): string {
-      return this.siteComponent;
+      siteComponent,
+      onClickNav,
+      changeStatus
     }
   }
 
