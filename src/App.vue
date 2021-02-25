@@ -26,6 +26,8 @@
       <ClimateFacts/>
     </div>
 
+    <Footer/>
+
   </div>
 </template>
 
@@ -38,6 +40,7 @@ import Donations from "@/components/donations/Donations.vue";
 import Goals from "@/components/goals/Goals.vue";
 import Projects from "@/components/projects/Projects.vue";
 import Team from "@/components/team/Team.vue";
+import Footer from "@/components/Footer.vue";
 
 export default defineComponent({
   name: 'App',
@@ -48,7 +51,8 @@ export default defineComponent({
     Donations,
     Goals,
     Projects,
-    Team
+    Team,
+    Footer
   },
   setup(){
     const siteComponent = ref<string>("Home");
