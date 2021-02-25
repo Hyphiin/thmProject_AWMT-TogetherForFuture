@@ -13,7 +13,7 @@
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
           <ul class="list-unstyled mb-0">
             <li>
-              <p class="text-white">{{evName}}</p>
+              <p class="text-white fw-bold">{{evName}}</p>
             </li>
             <li>
               <p class="text-white">{{adress}}</p>
@@ -30,7 +30,7 @@
 
           <ul class="list-unstyled">
             <li>
-              <p class="text-white">Spendenkonto</p>
+              <p class="text-white fw-bold">Spendenkonto</p>
             </li>
             <li>
               <p class="text-white">{{ evName }}</p>

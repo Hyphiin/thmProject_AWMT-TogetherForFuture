@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" @click="updateStatus('Home')">
         <img src="../assets/images/TogetherForFuture_Logo.png" class="img-fluid" alt="Logo"/>
