@@ -26,7 +26,27 @@
       <ClimateFacts class="component"/>
     </div>
 
-    <Footer/>
+    <div v-if="footerComponent==='Kontakt'">
+      <Kontakt class="component"/>
+    </div>
+
+    <div v-if="footerComponent==='Presse'">
+      <Presse class="component"/>
+    </div>
+
+    <div v-if="footerComponent==='Impressum'">
+      <Impressum class="component"/>
+    </div>
+
+    <div v-if="footerComponent==='Transparenz'">
+      <Transparenz class="component"/>
+    </div>
+
+    <div v-if="footerComponent==='Datenschutzerklärung'">
+      <Datenschutzerklaerung class="component"/>
+    </div>
+
+    <Footer @clickedFooter="onClickFooter"/>
 
   </div>
 </template>
@@ -41,6 +61,11 @@ import Goals from "@/components/goals/Goals.vue";
 import Projects from "@/components/projects/Projects.vue";
 import Team from "@/components/team/Team.vue";
 import Footer from "@/components/Footer.vue";
+import Kontakt from "@/components/footerLinks/Kontakt.vue";
+import Presse from "@/components/footerLinks/Presse.vue";
+import Impressum from "@/components/footerLinks/Impressum.vue";
+import Transparenz from "@/components/footerLinks/Transparenz.vue";
+import Datenschutzerklaerung from "@/components/footerLinks/Datenschutzerklaerung.vue";
 
 export default defineComponent({
   name: 'App',
@@ -52,13 +77,27 @@ export default defineComponent({
     Goals,
     Projects,
     Team,
-    Footer
+    Footer,
+    Kontakt,
+    Presse,
+    Impressum,
+    Transparenz,
+    Datenschutzerklaerung
   },
   setup(){
     const siteComponent = ref<string>("Home");
+    const footerComponent = ref<string>("");
 
     const onClickNav = (value: string) => {
       siteComponent.value = value;
+      footerComponent.value = "";
+    }
+
+    const onClickFooter = (value: string) => {
+      siteComponent.value = "";
+      footerComponent.value = value;
+      console.log(footerComponent.value)
+      console.log(siteComponent.value)
     }
 
     const changeStatus = computed(() => {
@@ -68,7 +107,9 @@ export default defineComponent({
     return{
       siteComponent,
       onClickNav,
-      changeStatus
+      changeStatus,
+      footerComponent,
+      onClickFooter
     }
   }
 

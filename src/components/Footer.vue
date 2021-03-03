@@ -81,11 +81,11 @@
         <div class="container pt-4">
           <!-- Section: Bottom Bar -->
           <section class="d-flex flex-row justify-content-between mb-5">
-            <a class="text-white" href="#">Kontakt</a>
-            <a class="text-white" href="#">Presse</a>
-            <a class="text-white" href="#">Impressum</a>
-            <a class="text-white" href="#">Datenschutzerklärung</a>
-            <a class="text-white" href="#">Transparenz</a>
+            <a class="text-white" href="#" @click="updateStatus('Kontakt')">Kontakt</a>
+            <a class="text-white" href="#" @click="updateStatus('Presse')">Presse</a>
+            <a class="text-white" href="#" @click="updateStatus('Impressum')">Impressum</a>
+            <a class="text-white" href="#" @click="updateStatus('Datenschutzerklärung')">Datenschutzerklärung</a>
+            <a class="text-white" href="#" @click="updateStatus('Transparenz')">Transparenz</a>
           </section>
           <!-- Section: Bottom Bar -->
         </div>
@@ -104,7 +104,7 @@ import {defineComponent, ref} from 'vue';
 
 export default defineComponent({
 name: "Footer",
-  setup(){
+  setup(props, context){
 
   const evName = ref<string>("Together For Future e.V.");
   const adress = ref<string>("Neue Schönhauser Str.20");
@@ -112,12 +112,23 @@ name: "Footer",
   const iban = ref<string>("DE 85 4306 0967 1015 9672 00");
 
   const footertext = ref<string>("Footer");
+
+    const status = ref<string>("Home");
+
+    const updateStatus = (label: string) => {
+      status.value = label;
+      context.emit('clickedFooter', status.value);
+      return status.value;
+    };
+
   return{
     evName,
     adress,
     plz,
     iban,
-    footertext
+    footertext,
+    status,
+    updateStatus
   }
   }
 });
