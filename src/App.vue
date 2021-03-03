@@ -3,27 +3,27 @@
     <Navbar @clicked="onClickNav"/>
 
     <div v-if="siteComponent==='Home'">
-      <Landingpage/>
+      <Landingpage class="component"/>
     </div>
 
     <div v-if="siteComponent==='Projects'">
-      <Projects/>
+      <Projects class="component"/>
     </div>
 
     <div v-if="siteComponent==='Team'">
-      <Team/>
+      <Team class="component"/>
     </div>
 
     <div v-if="siteComponent==='Donation'">
-      <Donations/>
+      <Donations class="component"/>
     </div>
 
     <div v-if="siteComponent==='Goals'">
-      <Goals/>
+      <Goals class="component"/>
     </div>
 
     <div v-if="siteComponent==='Facts'">
-      <ClimateFacts/>
+      <ClimateFacts class="component"/>
     </div>
 
     <Footer/>
@@ -83,5 +83,9 @@ export default defineComponent({
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.component{
+  margin-top: 88px;
 }
 </style>

@@ -50,7 +50,7 @@
               <!-- Facebook -->
               <a
                   class="btn btn-link btn-floating btn-lg text-white m-1"
-                  href="#!"
+                  href="https://www.facebook.com/tff.germany"
                   role="button"
                   data-mdb-ripple-color="white"
               ><i class="fab fa-facebook-f"></i
@@ -59,7 +59,7 @@
               <!-- Twitter -->
               <a
                   class="btn btn-link btn-floating btn-lg text-white m-1"
-                  href="#!"
+                  href="https://twitter.com/tff_germany"
                   role="button"
                   data-mdb-ripple-color="white"
               ><i class="fab fa-twitter"></i
@@ -68,7 +68,7 @@
               <!-- Instagram -->
               <a
                   class="btn btn-link btn-floating btn-lg text-white m-1"
-                  href="#!"
+                  href="https://www.instagram.com/tff.germany/"
                   role="button"
                   data-mdb-ripple-color="dark"
               ><i class="fab fa-instagram"></i
