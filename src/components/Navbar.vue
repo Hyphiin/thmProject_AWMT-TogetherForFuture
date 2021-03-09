@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" @click="updateStatus('Home')">
-        <img src="../assets/images/TogetherForFuture_Logo.png" class="img-fluid" alt="Logo"/>
+        <img src="../assets/images/logos/TogetherForFuture_Logo.png" class="img-fluid" alt="Logo"/>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
               aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

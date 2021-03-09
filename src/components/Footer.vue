@@ -2,7 +2,7 @@
   <footer class=" text-center text-lg-start mainfooter">
     <!-- Copyright -->
     <div class="text-center p-3 topfooter">
-      <img id="logo-line" src="../assets/images/tff-logo-line.png"/>
+      <img id="logo-line" src="../assets/images/logos/tff-logo-line.png"/>
     </div>
     <!-- Copyright -->
     <!-- Grid container -->
