@@ -2,44 +2,13 @@
   <div>
 
     <div id="app">
-      <toggle-component>
-        <template v-slot:title>
-          This is a sample title 1
-        </template>
-        <template v-slot:content>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, explicabo eaque rerum numquam error dolore
-          autem dolor, esse consequatur voluptas necessitatibus rem. Minus nobis, atque mollitia aliquid repellat qui
-          nulla!
-        </template>
-      </toggle-component>
-      <toggle-component>
-        <template v-slot:title>
-          This is a sample title 2
-        </template>
-        <template v-slot:content>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, explicabo eaque rerum numquam error dolore
-          autem dolor, esse consequatur voluptas necessitatibus rem. Minus nobis, atque mollitia aliquid repellat qui
-          nulla!
-        </template>
-      </toggle-component>
-      <toggle-component>
-        <template v-slot:title>
-          This is a sample title 3
-        </template>
-        <template v-slot:content>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, explicabo eaque rerum numquam error dolore
-          autem dolor, esse consequatur voluptas necessitatibus rem. Minus nobis, atque mollitia aliquid repellat qui
-          nulla!
-        </template>
-      </toggle-component>
-
-      <div class="toggle" :class="{ active: isActive }">
-        <div class="toggle-title border-bottom py-3 font-weight-bolder text-secondary" @click="toggleContent">
-          <slot name="title"></slot>
+      <div v-for="(key, value) in titles" :key="key" class="toggle" :class="{ active: isActive }">
+        <div class="toggle-title border-bottom font-weight-bolder text-secondary" @click="toggleContent">
+          <h5 name="title" class="fw-bold title">{{key}}</h5>
         </div>
         <transition name="fadeHeight" mode="out-in">
-          <div class="toggle-content py-3" v-if="isActive">
-            <slot name="content"></slot>
+          <div class="toggle-content py-3 content" v-if="isActive">
+            <slot name="content">{{ content[value] }}</slot>
           </div>
         </transition>
       </div>
@@ -57,11 +26,18 @@ export default defineComponent({
   setup() {
     const isActive = ref<boolean>(false);
 
+    const titles = ref<string[]>(["Transparenz","Name, Sitz, Anschrift, Gündungsjahr","Satzung", "Bescheid des Finanzamtes", "Name und Funktion wesentlicher Entscheidungsträger*innen",
+    "Bericht über Tätigkeiten", "Personalstruktur", "Mittelherkunft 2019", "Mittelverwendung 2019", "Gesellschaftsrechtliche Verbundenheit mit Dritten", "Namen von Personen, deren jährliche Zuwendung mehr als zehn Prozent der gesamten Jahreseinnahmen ausmachen"]);
+
+    const content = ref<string[]>(["Inhalt1","Inhalt2","Inhalt3","Inhalt4","Inhalt5","Inhalt6","Inhalt7","Inhalt8","Inhalt9","Inhalt10", "Inhalt11"]);
+
     const toggleContent = () => {
       isActive.value = !isActive.value
     }
     return {
       isActive,
+      titles,
+      content,
       toggleContent
     }
   }
@@ -71,6 +47,7 @@ export default defineComponent({
 <style scoped>
 
 .toggle-title {
+  text-align: start;
   position: relative;
   cursor: pointer;
 }
@@ -107,6 +84,13 @@ export default defineComponent({
 .fadeHeight-leave-to {
   opacity: 0;
   max-height: 0px;
+}
+
+.title{
+  background-color: darkgrey;
+}
+.content{
+  background-color: beige;
 }
 
 </style>
