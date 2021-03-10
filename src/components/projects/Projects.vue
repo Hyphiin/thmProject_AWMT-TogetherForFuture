@@ -1,5 +1,5 @@
 <template>
-  <div id="projects">
+  <div id="projects-container">
     <div class="image-container">
       <img src="../../assets/images/fghtfor1.5.jpg" class="img-thumbnail onefive" alt="fightfor1.5">
     </div>
@@ -226,8 +226,8 @@ export default defineComponent({
   }
 
   .img-logo{
-    height: 15%;
-    width: auto;
+    height:200px;
+    width: 200px;
   }
 
   .description-text{
