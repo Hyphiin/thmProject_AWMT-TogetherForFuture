@@ -80,7 +80,7 @@
         <!--Grid column-->
         <div class="container pt-4">
           <!-- Section: Bottom Bar -->
-          <section class="d-flex flex-row justify-content-between mb-5">
+          <section class="d-flex flex-row justify-content-between mb-5 flex-wrap">
             <a class="text-white" href="#" @click="updateStatus('Kontakt')">Kontakt</a>
             <a class="text-white" href="#" @click="updateStatus('Presse')">Presse</a>
             <a class="text-white" href="#" @click="updateStatus('Impressum')">Impressum</a>

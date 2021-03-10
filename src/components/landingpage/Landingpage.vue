@@ -1,15 +1,24 @@
 <template>
   <div>
-    <img src="../../assets/images/Hambacher_Forst.jpeg" class="img-thumbnail" alt="Hambacher Forst"/>
-    <div class="container d-flex justify-content-center align-items-center">
-      <div class="text-center d-flex justify-content-center align-items-center Banner">
+
+    <!--<Carousel></Carousel>-->
+
+    <!--img-->
+    <img src="../../assets/images/Hambacher_Forst.jpeg" class="bigPic" alt="Hambacher Forst"/>
+
+    <!--Green Banner-->
+    <div class="container d-flex justify-content-center align-items-center position-absolute top-50% start-50 translate-middle">
+      <div class="text-center d-flex justify-content-center align-items-center Banner mt-4">
         <h1 class="text-white">
           Another World is possible!
         </h1>
       </div>
     </div>
-    <div class="container d-flex justify-content-center p-4 infoContainer">
+
+    <!--Text Card-->
+    <div class="container d-flex justify-content-center p-4 infoContainer mt-5 border">
       <div class="row d-flex justify-content-center">
+        <!--links-->
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
           <ul class="list-unstyled mb-0">
             <li>
@@ -20,11 +29,8 @@
             </li>
           </ul>
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
+        <!--rechts-->
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-
           <ul class="list-unstyled">
             <li>
               <p>Wir, das sind Studierende und Auszubildende, Angestellte und UnternehmerInnen, Frauen und Männer,
@@ -37,8 +43,8 @@
         </div>
       </div>
     </div>
-    <hr/>
-    <div class="container d-flex justify-content-center">
+
+    <div class="container d-flex justify-content-center mt-5">
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="../../assets/images/Icebear.jpg" alt="Card image cap">
         <div class="card-body">
@@ -58,33 +64,56 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
+//import Carousel from "@/components/landingpage/Carousel.vue";
 
 export default defineComponent({
-  name: "Landingpage"
+  name: "Landingpage",
+  /*components: {
+    <!--Carousel,-->
+  }*/
 })
 </script>
 
 <style scoped>
 
 .Banner {
-  top: 550px;
-  height: 150px;
+  height: 100px;
   width: 800px;
   background-color: #67bb7d;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(4px);
-  /* Note: backdrop-filter has minimal browser support */
-
+  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.25);
   border-radius: 49px;
 }
 
 .infoContainer {
-  width: 800px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(4px);
-  /* Note: backdrop-filter has minimal browser support */
-
+  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
 }
+
+.bigPic{
+  width: 1400px;
+  height: 650px;
+}
+
+@media only screen and (max-width: 375px) {
+  .bigPic{
+    width: 375px;
+    height: 225px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .bigPic{
+    width: 425px;
+    height: 250px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bigPic{
+    width: 768px;
+    height: 400px;
+  }
+}
+
+
 
 </style>

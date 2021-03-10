@@ -1,15 +1,15 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#" @click="updateStatus('Home')">
-        <img src="../assets/images/TogetherForFuture_Logo.png" class="img-fluid" alt="Logo"/>
+      <a class="navbar-brand position-absolute col-md-2" href="#" @click="updateStatus('Home')">
+        <img src="../assets/images/TogetherForFuture_Logo.png" class="d-inline-block align-top" alt="Logo"/>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
               aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
+        <div class="navbar-nav offset-md-5">
           <a class="nav-link text-white h5" href="#" @click="updateStatus('Goals')">Unsere Ziele</a>
           <a class="nav-link text-white h5" href="#" @click="updateStatus('Projects')">Projekte & Kooperationen</a>
           <a class="nav-link text-white h5" href="#" @click="updateStatus('Team')">Das Team</a>
@@ -45,8 +45,8 @@ export default defineComponent({
 
 <style lang="css" scoped>
 img {
-  width: 20%;
-  height: 20%;
+  width: 175px;
+  height: 65px;
   position: relative;
 }
 
