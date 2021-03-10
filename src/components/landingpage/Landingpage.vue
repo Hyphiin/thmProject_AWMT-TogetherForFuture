@@ -16,9 +16,9 @@
     </div>
 
     <!--Text Card-->
-    <div class="container d-flex justify-content-center p-4 infoContainer mt-5 border">
+    <div class="container d-flex justify-content-center p-4 infoContainer border">
       <div class="row d-flex justify-content-center">
-        <!--links-->
+        <!-- Text links-->
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
           <ul class="list-unstyled mb-0">
             <li>
@@ -29,7 +29,7 @@
             </li>
           </ul>
         </div>
-        <!--rechts-->
+        <!--Text rechts-->
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
           <ul class="list-unstyled">
             <li>
@@ -44,6 +44,7 @@
       </div>
     </div>
 
+    <!--Eisbärding-->
     <div class="container d-flex justify-content-center mt-5">
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="../../assets/images/Icebear.jpg" alt="Card image cap">
@@ -87,17 +88,20 @@ export default defineComponent({
 .infoContainer {
   box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+  margin-top:90px;
 }
 
 .bigPic{
   width: 1400px;
   height: 650px;
+  margin-top: -40px;
 }
 
 @media only screen and (max-width: 375px) {
   .bigPic{
     width: 375px;
     height: 225px;
+    margin-top: -40px;
   }
 }
 
@@ -105,12 +109,14 @@ export default defineComponent({
   .bigPic{
     width: 425px;
     height: 250px;
+    margin-top: -40px;
   }
 }
 @media only screen and (max-width: 768px) {
   .bigPic{
     width: 768px;
     height: 400px;
+    margin-top: -40px;
   }
 }
 

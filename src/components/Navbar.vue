@@ -45,9 +45,11 @@ export default defineComponent({
 
 <style lang="css" scoped>
 img {
-  width: 175px;
-  height: 65px;
-  position: relative;
+  width: 190px;
+  height: 75px;
+  margin-top: 60px;
+  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
 }
 
 nav {
