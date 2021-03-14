@@ -16,7 +16,7 @@
               <p class="text-white fw-bold">{{evName}}</p>
             </li>
             <li>
-              <p class="text-white">{{adress}}</p>
+              <p class="text-white">{{address}}</p>
             </li>
             <li>
               <p class="text-white">{{plz}}</p>
@@ -107,7 +107,7 @@ name: "Footer",
   setup(props, context){
 
   const evName = ref<string>("Together For Future e.V.");
-  const adress = ref<string>("Neue Schönhauser Str.20");
+  const address = ref<string>("Neue Schönhauser Str.20");
   const plz = ref<string>("10178 Berlin");
   const iban = ref<string>("DE 85 4306 0967 1015 9672 00");
 
@@ -123,7 +123,7 @@ name: "Footer",
 
   return{
     evName,
-    adress,
+    address,
     plz,
     iban,
     footertext,
