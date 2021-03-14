@@ -16,7 +16,7 @@
               <p class="text-white fw-bold">{{evName}}</p>
             </li>
             <li>
-              <p class="text-white">{{adress}}</p>
+              <p class="text-white">{{address}}</p>
             </li>
             <li>
               <p class="text-white">{{plz}}</p>
@@ -80,12 +80,12 @@
         <!--Grid column-->
         <div class="container pt-4">
           <!-- Section: Bottom Bar -->
-          <section class="d-flex flex-row justify-content-between mb-5 flex-wrap">
-            <a class="text-white" href="#" @click="updateStatus('Kontakt')">Kontakt</a>
-            <a class="text-white" href="#" @click="updateStatus('Presse')">Presse</a>
-            <a class="text-white" href="#" @click="updateStatus('Impressum')">Impressum</a>
-            <a class="text-white" href="#" @click="updateStatus('Datenschutzerklärung')">Datenschutzerklärung</a>
-            <a class="text-white" href="#" @click="updateStatus('Transparenz')">Transparenz</a>
+          <section class="d-flex flex-row justify-content-between mb-5">
+            <a class="text-white link" href="#" @click="updateStatus('Kontakt')">Kontakt</a>
+            <a class="text-white link" href="#" @click="updateStatus('Presse')">Presse</a>
+            <a class="text-white link" href="#" @click="updateStatus('Impressum')">Impressum</a>
+            <a class="text-white link" href="#" @click="updateStatus('Datenschutzerklärung')">Datenschutzerklärung</a>
+            <a class="text-white link" href="#" @click="updateStatus('Transparenz')">Transparenz</a>
           </section>
           <!-- Section: Bottom Bar -->
         </div>
@@ -107,7 +107,7 @@ name: "Footer",
   setup(props, context){
 
   const evName = ref<string>("Together For Future e.V.");
-  const adress = ref<string>("Neue Schönhauser Str.20");
+  const address = ref<string>("Neue Schönhauser Str.20");
   const plz = ref<string>("10178 Berlin");
   const iban = ref<string>("DE 85 4306 0967 1015 9672 00");
 
@@ -123,7 +123,7 @@ name: "Footer",
 
   return{
     evName,
-    adress,
+    address,
     plz,
     iban,
     footertext,
@@ -146,5 +146,9 @@ name: "Footer",
 #logo-line{
   width: 60%;
   height: 60%;
+}
+
+.link{
+  text-decoration: none;
 }
 </style>
