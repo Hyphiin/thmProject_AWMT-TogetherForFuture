@@ -97,22 +97,23 @@ export default defineComponent({
   margin-top: -40px;
 }
 
-@media only screen and (max-width: 375px) {
+
+@media (min-width: 320px)  {
   .bigPic{
     width: 375px;
-    height: 225px;
-    margin-top: -40px;
-  }
-}
-
-@media only screen and (max-width: 425px) {
-  .bigPic{
-    width: 425px;
     height: 250px;
     margin-top: -40px;
   }
 }
-@media only screen and (max-width: 768px) {
+@media (min-width: 425px)  {
+  .bigPic{
+    width: 425px;
+    height: 280px;
+    margin-top: -40px;
+  }
+}
+
+@media (min-width: 768px)  {
   .bigPic{
     width: 768px;
     height: 400px;
@@ -120,6 +121,28 @@ export default defineComponent({
   }
 }
 
+@media (min-width: 992px) {
+  .bigPic{
+    width: 768px;
+    height: 400px;
+    margin-top: -40px;
+  }
+}
 
+@media (min-width: 1200px)  {
+  .bigPic{
+    width: 1200px;
+    height: 550px;
+    margin-top: -40px;
+  }
+}
+
+@media (min-width: 1400px)  {
+  .bigPic{
+    width: 1400px;
+    height: 600px;
+    margin-top: -40px;
+  }
+}
 
 </style>

@@ -1,10 +1,10 @@
 <template>
   <div id="projects-container">
     <div class="image-container">
-      <img src="../../assets/images/fghtfor1.5.jpg" class="img-thumbnail onefive" alt="fightfor1.5">
+      <img src="../../assets/images/fghtfor1.5_small.jpg" class="onefive bigPic" alt="fightfor1.5">
     </div>
-    <div class="container d-flex justify-content-center align-items-center">
-      <div class="text-center d-flex justify-content-center align-items-center Banner">
+    <div class="container d-flex justify-content-center align-items-center position-absolute top-50% start-50 translate-middle">
+      <div class="text-center d-flex justify-content-center align-items-center Banner mt-4">
         <h1 class="text-white">
           Projekte und Kooperationen
         </h1>
@@ -197,17 +197,13 @@ export default defineComponent({
 
 <style scoped>
 
-  .Banner {
-    top: 550px;
-    height: 150px;
-    width: 800px;
-    background-color: #67bb7d;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(4px);
-    /* Note: backdrop-filter has minimal browser support */
-
-    border-radius: 49px;
-  }
+.Banner {
+  height: 100px;
+  width: 800px;
+  background-color: #67bb7d;
+  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 49px;
+}
 
   .project-row1 {
     background-color: #f5f5f5;
@@ -237,5 +233,58 @@ export default defineComponent({
   .project-header{
     font-weight: bold;
   }
+
+.bigPic{
+  width: 1400px;
+  height: 650px;
+  margin-top: -40px;
+}
+
+@media (min-width: 320px)  {
+  .bigPic{
+    width: 375px;
+    height: 250px;
+    margin-top: -40px;
+  }
+}
+@media (min-width: 425px)  {
+  .bigPic{
+    width: 425px;
+    height: 280px;
+    margin-top: -40px;
+  }
+}
+
+@media (min-width: 768px)  {
+  .bigPic{
+    width: 768px;
+    height: 400px;
+    margin-top: -40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .bigPic{
+    width: 768px;
+    height: 400px;
+    margin-top: -40px;
+  }
+}
+
+@media (min-width: 1200px)  {
+  .bigPic{
+    width: 1200px;
+    height: 550px;
+    margin-top: -40px;
+  }
+}
+
+@media (min-width: 1400px)  {
+  .bigPic{
+    width: 1400px;
+    height: 600px;
+    margin-top: -40px;
+  }
+}
 
 </style>
