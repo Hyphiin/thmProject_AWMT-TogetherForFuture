@@ -43,7 +43,7 @@
             <b>Die Klimakrise macht keine Pause! </b> Wir nähern uns immer weiter dem Point of no return, deswegen müssen die
             Entscheidungsträger*innen jetzt handeln! Debatten über 2050 bringen uns nicht weiter. Daher ist am 19.03 der nächste
             globale Klimastreik. Aufgrund der derzeitigen Corona-Situation natürlich mit Abstand und vielfältigen Aktionen.
-            <a href="https://twitter.com/hashtag/NoMoreEmptyPromises?src=hashtag_click">#NoMoreEmptyPromises</a>
+            <a href="https://twitter.com/hashtag/NoMoreEmptyPromises?src=hashtag_click" class="linktext">#NoMoreEmptyPromises</a>
           </p>
           <a href="https://www.for-future-buendnis.de/" class="btn " style="background-color: #67bb7d">Zum Projekt!</a>
         </div>
@@ -88,7 +88,7 @@
         <h4 class="project-header">UNTERSTÜTZUNG VON FRIDAYS FOR FUTURE</h4>
         <p>
           Wir unterstützen Fridays for Future nach Möglichkeit, z.B. bei der Durchführung von Kongressen, Demonstrationen,
-          online Marketingkampagnen usw. Anfragen bitte über das <a href="#" >Kontaktformular</a> an uns senden! </p> <!-- TODO Link zum Kontakt -->
+          online Marketingkampagnen usw. Anfragen bitte über das <a href="#" class="linktext" @click="getContact" >Kontaktformular</a> an uns senden! </p> <!-- TODO Link zum Kontakt -->
       </div>
     </div>
   <hr>
@@ -101,7 +101,7 @@
     <div class="container-fluid p-4 ">
       <div class="row project-row2" >
         <div class="col-4">
-          <a href="https://www.klima-allianz.de/">
+          <a href="https://www.klima-allianz.de/" class="linktext">
           <img src="../../assets/images/logos/Logo_Klima-Allianz_Deutschland.jpg" class="img-fluid" alt="klima-allianz">
           </a>
         </div>
@@ -118,7 +118,7 @@
       <hr>
       <div class="row project-row2" >
         <div class="col-4">
-          <a href="https://neues-wirtschaftswunder.de/">
+          <a href="https://neues-wirtschaftswunder.de/" class="linktext">
             <img src="../../assets/images/logos/Logo_Initiative_Neues_Wirtschaftswunder-1280x1161.png" class="img-fluid img-logo" alt="Initiative-Wirtschaftswunder">
           </a>
         </div>
@@ -135,7 +135,7 @@
       <hr>
       <div class="row project-row2" >
         <div class="col-4">
-          <a href="https://www.zivilgesellschaft-ist-gemeinnuetzig.de/">
+          <a href="https://www.zivilgesellschaft-ist-gemeinnuetzig.de/" class="linktext">
             <img src="../../assets/images/logos/allianz-logo-pur-sw.jpg" class="img-fluid " alt="allianz-rechtssicherheit">
           </a>
         </div>
@@ -152,7 +152,7 @@
       <hr>
       <div class="row project-row2" >
         <div class="col-4">
-          <a href="https://klima-mitbestimmung.jetzt/">
+          <a href="https://klima-mitbestimmung.jetzt/" class="linktext">
             <img src="../../assets/images/logos/klimamitbestimmung-logo-.png" class="img-fluid " alt="klima-mitbestimmung">
           </a>
         </div>
@@ -161,16 +161,16 @@
             Wir unterstützen die Initiative “Klima-Mitbestimmung JETZT”. Deutschland braucht mehr Mitbestimmung beim Klimaschutz.
             Aus diesem Grund hat die Inititiative eine 2020 eine Petition mit der Forderung eines Bürger*innenrates gestartet,
             die es zu mehr als 70.000 Unterschriften und damit in den Bundestag geschafft hat. Wie es nun mit dem
-            Bürger*innenrat weitergeht erfährst du auf der Website von <a href="https://klima-mitbestimmung.jetzt/">“Klima-Mitbestimmung JETZT”</a>.
+            Bürger*innenrat weitergeht erfährst du auf der Website von <a href="https://klima-mitbestimmung.jetzt/" class="linktext">“Klima-Mitbestimmung JETZT”</a>.
             <br> <br>
-            Darüber hinaus sind wir mit 183 weiteren Organisationen Mitzeichner des <a href="https://klima-rat.org/">offenen Briefs</a> an den Ausschuss für Umwelt, Naturschtz und nukleare Sicherheit, der ebenfalls die Dringlichkeit des Bürger*innenrates unterstreicht.
+            Darüber hinaus sind wir mit 183 weiteren Organisationen Mitzeichner des <a href="https://klima-rat.org/" class="linktext">offenen Briefs</a> an den Ausschuss für Umwelt, Naturschtz und nukleare Sicherheit, der ebenfalls die Dringlichkeit des Bürger*innenrates unterstreicht.
           </p>
         </div>
       </div>
       <hr>
       <div class="row project-row2" >
         <div class="col-4">
-          <a href="https://www.stopecocide.de/">
+          <a href="https://www.stopecocide.de/" class="linktext">
             <img src="../../assets/images/logos/Ecocide-logo-1280x716.png" class="img-fluid img-logo" alt="klima-mitbestimmung">
           </a>
         </div>
@@ -188,10 +188,21 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {defineComponent, ref} from 'vue';
 
 export default defineComponent({
-  name: "Projects"
+  name: "Projects",
+  setup(props, context){
+    const contact = ref<string>("Kontakt");
+
+    const getContact = () => {
+      context.emit('getContact', contact.value);
+    };
+    return{
+      contact,
+      getContact
+    }
+  }
 });
 </script>
 
@@ -238,6 +249,11 @@ export default defineComponent({
   width: 1400px;
   height: 650px;
   margin-top: -40px;
+}
+
+.linktext {
+  color: #67bb7d;
+  text-decoration: none;
 }
 
 @media (min-width: 320px)  {

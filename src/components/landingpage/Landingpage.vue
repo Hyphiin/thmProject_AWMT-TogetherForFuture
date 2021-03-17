@@ -51,7 +51,7 @@
         <div class="card-body">
           <h5 class="card-title fw-bold">Klima oder doch Wetter?</h5>
           <p class="card-text">Alles was du über die Klimakrise wissen musst!</p>
-          <a href="#" class="btn btn-primary" style="background-color: #67bb7d">Spenden</a>
+          <button @click="startDonation" class="btn btn-primary" style="background-color: #67bb7d">Spenden</button>
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {defineComponent, ref} from 'vue';
 //import Carousel from "@/components/landingpage/Carousel.vue";
 
 export default defineComponent({
@@ -72,6 +72,19 @@ export default defineComponent({
   /*components: {
     <!--Carousel,-->
   }*/
+  setup(props, context){
+    const donate = ref<string>("Donation");
+
+    const startDonation = () => {
+      context.emit('startDonation', donate.value);
+      return donate.value;
+    };
+
+    return{
+      donate,
+      startDonation
+    }
+  }
 })
 </script>
 

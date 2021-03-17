@@ -3,11 +3,11 @@
     <Navbar @clicked="onClickNav"/>
 
     <div v-if="siteComponent==='Home'">
-      <Landingpage class="component"/>
+      <Landingpage class="component"  @startDonation="onClickDonation"/>
     </div>
 
     <div v-if="siteComponent==='Projects'">
-      <Projects class="component"/>
+      <Projects class="component" @getContact="onClickContact"/>
     </div>
 
     <div v-if="siteComponent==='Team'">
@@ -96,8 +96,15 @@ export default defineComponent({
     const onClickFooter = (value: string) => {
       siteComponent.value = "";
       footerComponent.value = value;
-      console.log(footerComponent.value)
-      console.log(siteComponent.value)
+    }
+
+    const onClickDonation = (value: string) => {
+      siteComponent.value = value;
+    }
+
+    const onClickContact = (value: string) => {
+      siteComponent.value = "";
+      footerComponent.value = value;
     }
 
     const changeStatus = computed(() => {
@@ -109,7 +116,9 @@ export default defineComponent({
       onClickNav,
       changeStatus,
       footerComponent,
-      onClickFooter
+      onClickFooter,
+      onClickDonation,
+      onClickContact
     }
   }
 
