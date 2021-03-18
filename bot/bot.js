@@ -31,6 +31,7 @@ function run(){
             
             
         results.push( {
+            index: i,
             city: cities[i].children[0].innerText,
             place: time,
             link: url,
