@@ -46,6 +46,10 @@
       <Datenschutzerklaerung class="component"/>
     </div>
 
+    <div v-if="footerComponent==='Bot'">
+      <Bot class="component"/>
+    </div>
+
     <Footer @clickedFooter="onClickFooter"/>
 
   </div>
@@ -66,6 +70,7 @@ import Presse from "@/components/footerLinks/Presse.vue";
 import Impressum from "@/components/footerLinks/Impressum.vue";
 import Transparenz from "@/components/footerLinks/Transparenz.vue";
 import Datenschutzerklaerung from "@/components/footerLinks/Datenschutzerklaerung.vue";
+import Bot from "@/components/bot/bot.vue";
 
 export default defineComponent({
   name: 'App',
@@ -82,7 +87,8 @@ export default defineComponent({
     Presse,
     Impressum,
     Transparenz,
-    Datenschutzerklaerung
+    Datenschutzerklaerung,
+    Bot
   },
   setup(){
     const siteComponent = ref<string>("Home");
