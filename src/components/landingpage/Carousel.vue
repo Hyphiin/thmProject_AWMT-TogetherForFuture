@@ -1,33 +1,25 @@
 <template>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div id="carouselExampleControls" class=" container-md carousel slide carouselDiv" data-bs-ride="carousel">
     <div class="carousel-inner bg-danger bg-gradient">
       <div class="carousel-item " :class="latestPic">
           <div class="container d-flex justify-content-center p-4 infoContainer border">
             <div class="row d-flex justify-content-center">
-              <button @click="prevItem" class="carousel-control-prev" type="button">
-                <span class="carousel-control-prev-icon"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <div @click="updateStatus('Bot')" class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <p>
-                      {{ content[counter].city + content[counter].place }}
-                    </p>
-                    <p>
-                      <a v-if="content[counter].link !== ''" :href="content[counter].link"> Mehr Informationen </a>
-                    </p>
-                  </li>
-                </ul>
+              <div @click="updateStatus('Bot')">
+                {{ content[counter].city + content[counter].place }}
+                <a v-if="content[counter].link !== ''" :href="content[counter].link"> Mehr Informationen </a>
               </div>
-              <button @click="nextItem" class="carousel-control-next" type="button">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
             </div>
           </div>
       </div>
     </div>
+    <button @click="prevItem" class="carousel-control-prev" type="button">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button @click="nextItem" class="carousel-control-next" type="button">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </template>
 
@@ -47,18 +39,18 @@ export default defineComponent({
     console.log(content[counter.value])
 
     const nextItem = () => {
-        if (counter.value <= content.length) {
+        if (counter.value < content.length-1) {
           counter.value++;
-          console.log(content[counter.value])
+          console.log(counter.value)
         }else{
           counter.value = 0;
         }
     }
 
     const prevItem = () => {
-      if (counter.value >= 0) {
+      if (counter.value > 0) {
         counter.value--;
-        console.log(content[counter.value])
+        console.log(counter.value)
       }else{
         counter.value = content.length;
       }
@@ -82,6 +74,50 @@ export default defineComponent({
 
 });
 </script>
+
+<style lang="css" scoped>
+
+.carouselDiv{
+  margin-top: 100px;
+  color:white;
+}
+
+@media (min-width: 320px)  {
+  .carouselDiv{
+    margin-top: 110px;
+  }
+}
+@media (min-width: 425px)  {
+  .carouselDiv{
+    margin-top: 110px;
+  }
+}
+
+@media (min-width: 768px)  {
+  .carouselDiv{
+    margin-top: 105px;
+  }
+}
+
+@media (min-width: 992px) {
+  .carouselDiv{
+    margin-top: 100px;
+  }
+}
+
+@media (min-width: 1200px)  {
+  .carouselDiv{
+    margin-top: 100px;
+  }
+}
+
+@media (min-width: 1400px)  {
+  .carouselDiv{
+    margin-top: 100px;
+  }
+}
+
+</style>
 
 
 

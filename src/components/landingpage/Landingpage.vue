@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <!--img-->
     <img src="../../assets/images/Hambacher_Forst.jpeg" class="bigPic" alt="Hambacher Forst"/>
 
@@ -103,22 +102,22 @@ export default defineComponent({
 .bigPic{
   width: 1400px;
   height: 650px;
-  margin-top: -40px;
+  margin-top: -80px;
 }
 
 
 @media (min-width: 320px)  {
   .bigPic{
-    width: 375px;
-    height: 250px;
-    margin-top: -40px;
+    width: 320px;
+    height: 230px;
+    margin-top: -80px;
   }
 }
 @media (min-width: 425px)  {
   .bigPic{
     width: 425px;
-    height: 280px;
-    margin-top: -40px;
+    height: 240px;
+    margin-top: -80px;
   }
 }
 
@@ -126,15 +125,15 @@ export default defineComponent({
   .bigPic{
     width: 768px;
     height: 400px;
-    margin-top: -40px;
+    margin-top: -80px;
   }
 }
 
 @media (min-width: 992px) {
   .bigPic{
-    width: 768px;
-    height: 400px;
-    margin-top: -40px;
+    width: 992px;
+    height: 450px;
+    margin-top: -80px;
   }
 }
 
@@ -142,7 +141,7 @@ export default defineComponent({
   .bigPic{
     width: 1200px;
     height: 550px;
-    margin-top: -40px;
+    margin-top: -80px;
   }
 }
 
@@ -150,7 +149,7 @@ export default defineComponent({
   .bigPic{
     width: 1400px;
     height: 600px;
-    margin-top: -40px;
+    margin-top: -80px;
   }
 }
 
