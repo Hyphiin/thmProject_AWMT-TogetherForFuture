@@ -3,6 +3,7 @@
     <Navbar @clicked="onClickNav"/>
 
     <div v-if="siteComponent==='Home'">
+      <Carousel></Carousel>
       <Landingpage class="component"  @startDonation="onClickDonation"/>
     </div>
 
@@ -71,6 +72,7 @@ import Impressum from "@/components/footerLinks/Impressum.vue";
 import Transparenz from "@/components/footerLinks/Transparenz.vue";
 import Datenschutzerklaerung from "@/components/footerLinks/Datenschutzerklaerung.vue";
 import Bot from "@/components/bot/bot.vue";
+import Carousel from "@/components/landingpage/Carousel.vue";
 
 export default defineComponent({
   name: 'App',
@@ -88,7 +90,8 @@ export default defineComponent({
     Impressum,
     Transparenz,
     Datenschutzerklaerung,
-    Bot
+    Bot,
+    Carousel
   },
   setup(){
     const siteComponent = ref<string>("Home");

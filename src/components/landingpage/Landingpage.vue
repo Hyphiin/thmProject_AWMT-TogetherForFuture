@@ -1,8 +1,6 @@
 <template>
   <div>
 
-    <!--<Carousel></Carousel>-->
-
     <!--img-->
     <img src="../../assets/images/Hambacher_Forst.jpeg" class="bigPic" alt="Hambacher Forst"/>
 
@@ -65,13 +63,11 @@
 
 <script lang="ts">
 import {defineComponent, ref} from 'vue';
-//import Carousel from "@/components/landingpage/Carousel.vue";
+
 
 export default defineComponent({
   name: "Landingpage",
-  /*components: {
-    <!--Carousel,-->
-  }*/
+
   setup(props, context){
     const donate = ref<string>("Donation");
 

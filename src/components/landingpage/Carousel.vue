@@ -1,85 +1,61 @@
 <template>
-
-  <!--Angefangen, hiervon kopiert: https://bootstrap-vue.org/docs/components/carousel# -->
-
-  <div>
-    <b-carousel
-        id="carousel-1"
-        v-model="slide"
-        :interval="4000"
-        controls
-        indicators
-        background="#ababab"
-        img-width="1024"
-        img-height="480"
-        style="text-shadow: 1px 1px 2px #333;"
-        @sliding-start="onSlideStart"
-        @sliding-end="onSlideEnd"
-    >
-
-      <b-carousel-slide>
-      <div class="container bg-danger">
-        <h2>Grüne Demo</h2>
-        <p>Am 24.09.2021 in München!</p>
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div v-for="city in content" :key="city.city" class="carousel-item" :class="latestPic">
+          <div class="container d-flex justify-content-center p-4 infoContainer border">
+            <div class="row d-flex justify-content-center">
+              <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <p>
+                      {{ city.city + city.place }}
+                      <a v-if="city.link !== ''" :href="city.link"> Mehr Informationen </a>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
       </div>
-      </b-carousel-slide>
-
-      <b-carousel-slide>
-        <div class="container bg-info">
-          <h2>Blau Demo</h2>
-          <p>Am 24.09.2021 in München!</p>
-        </div>
-      </b-carousel-slide>
-
-      <b-carousel-slide>
-        <div class="container bg-warning">
-          <h2>Gelbe Demo</h2>
-          <p>Am 24.09.2021 in München!</p>
-        </div>
-      </b-carousel-slide>
-
-      <a href="#" role="button" aria-controls="carousel-1___BV_inner_" class="carousel-control-prev" aria-disabled="true">
-        <span aria-hidden="true" class="carousel-control-prev-icon"></span>
-        <span class="sr-only">Previous slide</span>
-      </a>
-      <a href="#" role="button" aria-controls="carousel-1___BV_inner_" class="carousel-control-next">
-        <span aria-hidden="true" class="carousel-control-next-icon"></span>
-        <span class="sr-only">Next slide</span>
-      </a>
-
-      <ol id="carousel-1___BV_indicators_" aria-hidden="false" aria-label="Select a slide to display" aria-owns="carousel-1___BV_inner_" class="carousel-indicators">
-        <li role="button" id="carousel-1___BV_indicator_1_" tabindex="0" aria-current="true" aria-label="Goto slide 1" aria-controls="carousel-1___BV_inner_" class="active" aria-describedby="__BVID__518"></li>
-        <li role="button" id="carousel-1___BV_indicator_2_" tabindex="0" aria-current="false" aria-label="Goto slide 2" aria-controls="carousel-1___BV_inner_" class="" aria-describedby="__BVID__519"></li>
-        <li role="button" id="carousel-1___BV_indicator_3_" tabindex="0" aria-current="false" aria-label="Goto slide 3" aria-controls="carousel-1___BV_inner_" class="" aria-describedby="__BVID__520"></li>
-      </ol>
-    </b-carousel>
-
-    <p class="mt-4">
-      Slide #: {{ slide }}<br>
-      Sliding: {{ sliding }}
-    </p>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      slide: 0,
-      sliding: null
+
+<script lang="ts">
+import botdata from "../../../bot/result/OrteAm19Maerz.json";
+import {defineComponent, ref} from "vue";
+
+export default defineComponent({
+  name: "Carousel",
+  setup() {
+    const content = ref<string[]>([botdata]);
+    const latestPic = ref<string>("active");
+
+    const nextItem = () => {
+        latestPic.value = "";
     }
-  },
-  methods: {
-    onSlideStart(slide) {
-      if (slide) {
-        this.sliding = true
-      }
-    },
-    onSlideEnd(slide) {
-      if (slide) {
-        this.sliding = false
-      }
+
+    return {
+      content,
+      latestPic,
+      nextItem
     }
   }
-}
+
+});
 </script>
+
+
+
+
+
+

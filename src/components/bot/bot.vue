@@ -1,10 +1,20 @@
 <template>
-    <div>
-        <h1> Demos </h1>
-        <ul>
-        <li v-for="city in content" :key="city.city">{{ city.city + city.place }} <a v-if="city.link != ''" :href="city.link" > Mehr Informationen </a>       </li>
+  <!--Text Card-->
+  <div v-for="city in content" :key="city.city" class="container d-flex justify-content-center p-4 infoContainer border">
+    <div class="row d-flex justify-content-center">
+      <!-- Text links-->
+      <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+        <ul class="list-unstyled mb-0">
+          <li>
+            <p>
+              {{ city.city + city.place }}
+              <a v-if="city.link !== ''" :href="city.link"> Mehr Informationen </a>
+            </p>
+          </li>
         </ul>
+      </div>
     </div>
+  </div>
 </template>
 
 <script lang="ts">
