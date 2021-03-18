@@ -81,11 +81,12 @@
         <div class="container pt-4">
           <!-- Section: Bottom Bar -->
           <section class="d-flex flex-row justify-content-between mb-5">
-            <a class="text-white link" href="#" @click="updateStatus('Kontakt')">Kontakt</a>
-            <a class="text-white link" href="#" @click="updateStatus('Presse')">Presse</a>
-            <a class="text-white link" href="#" @click="updateStatus('Impressum')">Impressum</a>
-            <a class="text-white link" href="#" @click="updateStatus('Datenschutzerklärung')">Datenschutzerklärung</a>
-            <a class="text-white link" href="#" @click="updateStatus('Transparenz')">Transparenz</a>
+            <a class="text-white" href="#" @click="updateStatus('Kontakt')">Kontakt</a>
+            <a class="text-white" href="#" @click="updateStatus('Presse')">Presse</a>
+            <a class="text-white" href="#" @click="updateStatus('Impressum')">Impressum</a>
+            <a class="text-white" href="#" @click="updateStatus('Datenschutzerklärung')">Datenschutzerklärung</a>
+            <a class="text-white" href="#" @click="updateStatus('Transparenz')">Transparenz</a>
+            <a class="text-white" href="#" @click="updateStatus('Bot')">Bottest</a>
           </section>
           <!-- Section: Bottom Bar -->
         </div>
