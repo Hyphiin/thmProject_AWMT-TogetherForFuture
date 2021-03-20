@@ -10,13 +10,8 @@
         </h1>
       </div>
     </div>
-    <div class="container d-flex justify-content-left p-4">
-      <div class="flex-row flex-wrap d-flex">
-              <h4 class="fw-bold">PROJEKTE</h4>
-      </div>
-    </div>
-    <hr/>
-  <div class="container-fluid p-4 ">
+
+  <div class="container-fluid p-4 mt-5 pt-5">
     <div class="row project-row1" >
       <div class="col-4">
         <img src="../../assets/images/logos/forfuture2048x2048-980x980.png" class="img-fluid img-logo" alt="for-future-bund">
@@ -30,8 +25,8 @@
         </p>
         <a href="https://www.for-future-buendnis.de/" class="btn " style="background-color: #67bb7d">Zum Projekt!</a>
       </div>
+      <div class="dreieck"></div>
     </div>
-    <hr/>
 
       <div class="row project-row2">
         <div class="col-4">
@@ -47,8 +42,9 @@
           </p>
           <a href="https://www.for-future-buendnis.de/" class="btn " style="background-color: #67bb7d">Zum Projekt!</a>
         </div>
+        <div class="dreieck2"></div>
       </div>
-    <hr/>
+
       <div class="row project-row1">
         <div class="col-4">
           <img src="../../assets/images/logos/H4FLogoInstaHighRes-980x980.png" class="img-fluid img-logo" alt="help-for-future">
@@ -63,8 +59,9 @@
           </p>
           <a href="https://www.for-future-buendnis.de/" class="btn " style="background-color: #67bb7d">Zum Projekt!</a>
         </div>
+        <div class="dreieck"></div>
       </div>
-    <hr/>
+
       <div class="row project-row2">
         <div class="col-4">
           <img src="../../assets/images/logos/schwarm-for-future-logo.png" class="img-fluid img-logo" alt="schwarm-for-future">
@@ -79,8 +76,9 @@
           <a href="https://www.for-future-buendnis.de/" class="btn " style="background-color: #67bb7d">Zum Projekt!</a>
         </div>
       </div>
+    <div class="dreieck2"></div>
     </div>
-    <hr>
+
     <div class="row project-row1">
       <div class="col-4">
       </div>
@@ -90,14 +88,15 @@
           Wir unterstützen Fridays for Future nach Möglichkeit, z.B. bei der Durchführung von Kongressen, Demonstrationen,
           online Marketingkampagnen usw. Anfragen bitte über das <a href="#" class="linktext" @click="getContact" >Kontaktformular</a> an uns senden! </p> <!-- TODO Link zum Kontakt -->
       </div>
+      <div class="dreieck2"></div>
     </div>
-  <hr>
+
     <div class="container d-flex p-4">
       <div class="row  d-flex">
         <h4 class="fw-bold" style="text-align: right;">KOOPERATIONEN</h4>
       </div>
     </div>
-    <hr>
+
     <div class="container-fluid p-4 ">
       <div class="row project-row2" >
         <div class="col-4">
@@ -114,8 +113,9 @@
             Ihre Mitgliedsorganisationen repräsentieren zusammen rund 25 Millionen Menschen.
           </p>
         </div>
+        <div class="dreieck"></div>
       </div>
-      <hr>
+
       <div class="row project-row2" >
         <div class="col-4">
           <a href="https://neues-wirtschaftswunder.de/" class="linktext">
@@ -131,8 +131,9 @@
             <b>Beteiligung</b> und <b>Transparenz</b> des Transformationspakets erreicht werden.
           </p>
         </div>
+        <div class="dreieck2"></div>
       </div>
-      <hr>
+
       <div class="row project-row2" >
         <div class="col-4">
           <a href="https://www.zivilgesellschaft-ist-gemeinnuetzig.de/" class="linktext">
@@ -148,8 +149,9 @@
             Klarstellungen.
           </p>
         </div>
+        <div class="dreieck"></div>
       </div>
-      <hr>
+
       <div class="row project-row2" >
         <div class="col-4">
           <a href="https://klima-mitbestimmung.jetzt/" class="linktext">
@@ -166,8 +168,9 @@
             Darüber hinaus sind wir mit 183 weiteren Organisationen Mitzeichner des <a href="https://klima-rat.org/" class="linktext">offenen Briefs</a> an den Ausschuss für Umwelt, Naturschtz und nukleare Sicherheit, der ebenfalls die Dringlichkeit des Bürger*innenrates unterstreicht.
           </p>
         </div>
+        <div class="dreieck2"></div>
       </div>
-      <hr>
+
       <div class="row project-row2" >
         <div class="col-4">
           <a href="https://www.stopecocide.de/" class="linktext">
@@ -256,11 +259,40 @@ export default defineComponent({
   text-decoration: none;
 }
 
+
+div.dreieck {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin-top:10px;
+  margin-bottom: 10px;
+  border-left: 1276px solid #67bb7d8a;
+  border-right: 100px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+div.dreieck2 {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin-top:10px;
+  margin-bottom: 10px;
+  border-left: 1276px solid transparent;
+  border-right: 100px solid #67bb7d8a;
+  border-bottom: 10px solid #67bb7d8a;
+}
+
 @media (min-width: 320px)  {
   .bigPic{
     width: 375px;
     height: 250px;
     margin-top: -40px;
+  }
+  div.dreieck{
+    border-left: 196px solid #67bb7d8a;
+  }
+  div.dreieck2{
+    border-left: 196px solid transparent;
   }
 }
 @media (min-width: 425px)  {
@@ -268,6 +300,12 @@ export default defineComponent({
     width: 425px;
     height: 280px;
     margin-top: -40px;
+  }
+  div.dreieck{
+    border-left: 301px solid #67bb7d8a;
+  }
+  div.dreieck2{
+    border-left: 301px solid transparent;
   }
 }
 
@@ -277,6 +315,12 @@ export default defineComponent({
     height: 400px;
     margin-top: -40px;
   }
+  div.dreieck{
+    border-left: 644px solid #67bb7d8a;
+  }
+  div.dreieck2{
+    border-left: 644px solid transparent;
+  }
 }
 
 @media (min-width: 992px) {
@@ -284,6 +328,12 @@ export default defineComponent({
     width: 768px;
     height: 400px;
     margin-top: -40px;
+  }
+  div.dreieck{
+    border-left: 868px solid #67bb7d8a;
+  }
+  div.dreieck2{
+    border-left: 868px solid transparent;
   }
 }
 
@@ -293,6 +343,12 @@ export default defineComponent({
     height: 550px;
     margin-top: -40px;
   }
+  div.dreieck{
+    border-left: 1076px solid #67bb7d8a;
+  }
+  div.dreieck2{
+    border-left: 1076px solid transparent;
+  }
 }
 
 @media (min-width: 1400px)  {
@@ -300,6 +356,12 @@ export default defineComponent({
     width: 1400px;
     height: 600px;
     margin-top: -40px;
+  }
+  div.dreieck{
+    border-left: 1276px solid #67bb7d8a;
+  }
+  div.dreieck2{
+    border-left: 1276px solid transparent;
   }
 }
 

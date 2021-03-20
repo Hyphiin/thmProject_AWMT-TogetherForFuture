@@ -12,27 +12,27 @@
           </div>
         </transition>
       </div>
-
     </div>-->
-    <div id="app">
-      <div class="toggle" :class="{ active: isActive[0] }">
-        <div class="toggle-title border-bottom font-weight-bolder text-secondary" @click="toggleContent(0)">
-          <h5 name="title" class="fw-bold title">Transparenz</h5>
+
+    <div id="app" class="pt-5">
+      <div class="container container-sm toggle transparanzContainer mb-3 pt-2 pb-2" :class="{ active: isActive[0] }">
+        <div class="toggle-title font-weight-bolder text-secondary" @click="toggleContent(0)">
+          <h5 name="title" class="fw-bold text-center">Transparenz</h5>
         </div>
         <transition name="fadeHeight" mode="out-in">
-          <div class="toggle-content py-3 content" v-if="isActive[0]">
-            <slot name="content">Transparenz ist uns wichtig. Deshalb haben wir uns der Initiative Transparente Zivilgesellschaft angeschlossen. Wir verpflichten uns die folgenden zehn Informationen der Öffentlichkeit zur Verfügung zu stellen und aktuell zu halten.</slot>
+          <div class="toggle-content py-3 mb-3" v-if="isActive[0]">
+            <slot name="">Transparenz ist uns wichtig. Deshalb haben wir uns der Initiative Transparente Zivilgesellschaft angeschlossen. Wir verpflichten uns die folgenden zehn Informationen der Öffentlichkeit zur Verfügung zu stellen und aktuell zu halten.</slot>
           </div>
         </transition>
       </div>
-      <div class="toggle" :class="{ active: isActive[1] }">
-        <div class="toggle-title border-bottom font-weight-bolder text-secondary" @click="toggleContent(1)">
-          <h5 name="title" class="fw-bold title">Name, Sitz, Anschrift, Gündungsjahr</h5>
+      <div class="toggle container container-sm transparanzContainer mb-3 pt-2 pb-2" :class="{ active: isActive[1] }">
+        <div class="toggle-title font-weight-bolder text-secondary" @click="toggleContent(1)">
+          <h5 name="title" class="fw-bold text-center">Name, Sitz, Anschrift, Gündungsjahr</h5>
         </div>
         <transition name="fadeHeight" mode="out-in">
-          <div class="toggle-content py-3 content" v-if="isActive[1]">
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-              <ul class="list-unstyled mb-0">
+          <div class="toggle-content py-3 mb-3" v-if="isActive[1]">
+            <div class="text-center">
+              <ul class="list-unstyled">
                 <li>
                   <p class="fw-bold">{{evName}}</p>
                 </li>
@@ -59,16 +59,16 @@
           </div>
         </transition>
       </div>
-      <div class="toggle" :class="{ active: isActive[2] }">
-        <div class="toggle-title border-bottom font-weight-bolder text-secondary" @click="toggleContent(2)">
-          <h5 name="title" class="fw-bold title">Satzung</h5>
+      <div class="toggle container container-sm transparanzContainer mb-3 pt-2 pb-2" :class="{ active: isActive[2] }">
+        <div class="toggle-title font-weight-bolder text-secondary" @click="toggleContent(2)">
+          <h5 name="title" class="fw-bold text-center">Satzung</h5>
         </div>
         <transition name="fadeHeight" mode="out-in">
-          <div class="toggle-content py-3 content" v-if="isActive[2]">
+          <div class="toggle-content py-3 mb-3" v-if="isActive[2]">
             <div class="container d-flex justify-content-center p-4 infoContainer">
               <div class="row d-flex justify-content-center">
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                  <ul class="list-unstyled mb-0">
+                  <ul class="list-unstyled">
                     <li>
                       <p>Together for Future ist ein junger, gemeinnütziger Verein mit Sitz in Berlin. Wir arbeiten für eine lebenswerte, gerechte und zukunftssichere Welt mit Fokus Klimaschutz. Durch Mobilisierung, faktenbasierte Aufklärung und Vernetzung setzen wir uns dafür ein, dass das völkerrechtlich verbindliche Pariser Klimaschutzabkommen eingehalten wird.</p>
                     </li>
@@ -95,23 +95,23 @@
           </div>
         </transition>
       </div>
-      <div class="toggle" :class="{ active: isActive[3] }">
-        <div class="toggle-title border-bottom font-weight-bolder text-secondary" @click="toggleContent(3)">
-          <h5 name="title" class="fw-bold title">Bescheid des Finanzamtes</h5>
+      <div class="toggle container container-sm transparanzContainer mb-3 pt-2 pb-2" :class="{ active: isActive[3] }">
+        <div class="toggle-title font-weight-bolder text-secondary" @click="toggleContent(3)">
+          <h5 name="title" class="fw-bold text-center">Bescheid des Finanzamtes</h5>
         </div>
         <transition name="fadeHeight" mode="out-in">
-          <div class="toggle-content py-3 content" v-if="isActive[3]">
+          <div class="toggle-content py-3 mb-3" v-if="isActive[3]">
             <slot name="content">Der Verein ist nach §§ 51, 59, 60 und 61 AO vom Finanzamt für Körperschaften I Berlin, StNr. 27/678/57847, mit Bescheid vom 4. November 2019 nach § 60a AO als gemeinnützig anerkannt. </slot>
           </div>
         </transition>
       </div>
-      <div class="toggle" :class="{ active: isActive[4] }">
-        <div class="toggle-title border-bottom font-weight-bolder text-secondary" @click="toggleContent(4)">
-          <h5 name="title" class="fw-bold title">Name und Funktion wesentlicher Entscheidungsträger*innen</h5>
+      <div class="toggle container container-sm transparanzContainer mb-3 pt-2 pb-2" :class="{ active: isActive[4] }">
+        <div class="toggle-title font-weight-bolder text-secondary" @click="toggleContent(4)">
+          <h5 name="title" class="fw-bold text-center">Name und Funktion wesentlicher Entscheidungsträger*innen</h5>
         </div>
         <transition name="fadeHeight" mode="out-in">
-          <div class="toggle-content py-3 content" v-if="isActive[4]">
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <div class="toggle-content py-3 mb-3" v-if="isActive[4]">
+            <div class="text-center">
               <ul class="list-unstyled mb-0">
                 <li>
                   <p>1. Vorstand: Torben Greve</p>
@@ -127,54 +127,54 @@
           </div>
         </transition>
       </div>
-      <div class="toggle" :class="{ active: isActive[5] }">
-        <div class="toggle-title border-bottom font-weight-bolder text-secondary" @click="toggleContent(5)">
-          <h5 name="title" class="fw-bold title">Bericht über Tätigkeiten</h5>
+      <div class="toggle container container-sm transparanzContainer mb-3 pt-2 pb-2" :class="{ active: isActive[5] }">
+        <div class="toggle-title font-weight-bolder text-secondary" @click="toggleContent(5)">
+          <h5 name="title" class="fw-bold text-center">Bericht über Tätigkeiten</h5>
         </div>
         <transition name="fadeHeight" mode="out-in">
-          <div class="toggle-content py-3 content" v-if="isActive[5]">
+          <div class="toggle-content py-3 mb-3" v-if="isActive[5]">
             <slot name="content">Einen Überblick über unsere Projekte findest Du <a href="https://togetherforfuture.org/wp-content/uploads/2020/12/Ta%CC%88tigkeitsbericht-TFF-2019_signedtogorg.pdf" class="linktext">hier.</a> </slot>
           </div>
         </transition>
       </div>
-      <div class="toggle" :class="{ active: isActive[6] }">
-        <div class="toggle-title border-bottom font-weight-bolder text-secondary" @click="toggleContent(6)">
-          <h5 name="title" class="fw-bold title">Personalstruktur</h5>
+      <div class="toggle container container-sm transparanzContainer mb-3 pt-2 pb-2" :class="{ active: isActive[6] }">
+        <div class="toggle-title font-weight-bolder text-secondary" @click="toggleContent(6)">
+          <h5 name="title" class="fw-bold text-center">Personalstruktur</h5>
         </div>
         <transition name="fadeHeight" mode="out-in">
-          <div class="toggle-content py-3 content" v-if="isActive[6]">
+          <div class="toggle-content py-3 mb-3" v-if="isActive[6]">
             <slot name="content">Insgesamt: 3 Vollzeitangestellte, 5 Teilzeitangestellte und 3 Ehrenamtliche</slot>
           </div>
         </transition>
       </div>
-      <div class="toggle" :class="{ active: isActive[7] }">
-        <div class="toggle-title border-bottom font-weight-bolder text-secondary" @click="toggleContent(7)">
-          <h5 name="title" class="fw-bold title">Mittelherkunft 2019</h5>
+      <div class="toggle container container-sm transparanzContainer mb-3 pt-2 pb-2" :class="{ active: isActive[7] }">
+        <div class="toggle-title font-weight-bolder text-secondary" @click="toggleContent(7)">
+          <h5 name="title" class="fw-bold text-center">Mittelherkunft 2019</h5>
         </div>
         <transition name="fadeHeight" mode="out-in">
-          <div class="toggle-content py-3 content" v-if="isActive[7]">
+          <div class="toggle-content py-3 mb-3" v-if="isActive[7]">
             <slot name="content">Die Daten zur Mittelherkunft findest Du <a href="https://togetherforfuture.org/wp-content/uploads/2020/12/Together-for-Future-e.V.-Gewinnermittlung-2019-11.pdf" class="linktext">hier.</a> </slot>
           </div>
         </transition>
       </div>
-      <div class="toggle" :class="{ active: isActive[8] }">
-        <div class="toggle-title border-bottom font-weight-bolder text-secondary" @click="toggleContent(8)">
-          <h5 name="title" class="fw-bold title">Mittelverwendung 2019</h5>
+      <div class="toggle container container-sm transparanzContainer mb-3 pt-2 pb-2" :class="{ active: isActive[8] }">
+        <div class="toggle-title font-weight-bolder text-secondary" @click="toggleContent(8)">
+          <h5 name="title" class="fw-bold text-center">Mittelverwendung 2019</h5>
         </div>
         <transition name="fadeHeight" mode="out-in">
-          <div class="toggle-content py-3 content" v-if="isActive[8]">
+          <div class="toggle-content py-3 mb-3" v-if="isActive[8]">
             <slot name="content">Die Daten zur Mittelverwendung findest Du <a href="https://togetherforfuture.org/wp-content/uploads/2020/12/Together-for-Future-e.V.-Gewinnermittlung-2019-11.pdf" class="linktext">hier.</a> </slot>
           </div>
         </transition>
       </div>
-      <div class="toggle" :class="{ active: isActive[9] }">
-        <div class="toggle-title border-bottom font-weight-bolder text-secondary" @click="toggleContent(9)">
-          <h5 name="title" class="fw-bold title">Gesellschaftsrechtliche Verbundenheit mit Dritten</h5>
+      <div class="toggle container container-sm transparanzContainer mb-3 pt-2 pb-2" :class="{ active: isActive[9] }">
+        <div class="toggle-title font-weight-bolder text-secondary" @click="toggleContent(9)">
+          <h5 name="title" class="fw-bold text-center">Gesellschaftsrechtliche Verbundenheit mit Dritten</h5>
         </div>
         <transition name="fadeHeight" mode="out-in">
-          <div class="toggle-content py-3 content" v-if="isActive[9]">
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-              <ul class="list-unstyled mb-0">
+          <div class="toggle-content py-3 mb-3" v-if="isActive[9]">
+            <div class="text-center">
+              <ul class="list-unstyled">
                 <li>
                   <p>Teil des for Future-Bündnisses  </p>
                 </li>
@@ -192,14 +192,14 @@
           </div>
         </transition>
       </div>
-      <div class="toggle" :class="{ active: isActive[10] }">
-        <div class="toggle-title border-bottom font-weight-bolder text-secondary" @click="toggleContent(10)">
-          <h5 name="title" class="fw-bold title">Namen von Personen, deren jährliche Zuwendung mehr als zehn Prozent der gesamten Jahreseinnahmen ausmachen</h5>
+      <div class="toggle container container-sm transparanzContainer mb-3 pt-2 pb-2" :class="{ active: isActive[10] }">
+        <div class="toggle-title font-weight-bolder text-secondary" @click="toggleContent(10)">
+          <h5 name="title" class="fw-bold text-center">Namen von Personen, deren jährliche Zuwendung mehr als zehn Prozent der gesamten Jahreseinnahmen ausmachen</h5>
         </div>
         <transition name="fadeHeight" mode="out-in">
-          <div class="toggle-content py-3 content" v-if="isActive[10]">
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-              <ul class="list-unstyled mb-0">
+          <div class="toggle-content py-3 mb-5" v-if="isActive[10]">
+            <div class="text-center">
+              <ul class="list-unstyled">
                 <li>
                   <p>Morgengrün Stiftung  </p>
                 </li>
@@ -310,6 +310,48 @@ export default defineComponent({
 .linktext{
   text-decoration: none;
   color: #67bb7d;
+}
+
+.transparanzContainer{
+  box-shadow: 2px 1px 1px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 49px;
+  width: 50%;
+}
+
+@media (min-width: 320px){
+  .transparanzContainer{
+    width: 100%;
+  }
+}
+
+@media (min-width: 425px){
+  .transparanzContainer{
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px){
+  .transparanzContainer{
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .transparanzContainer{
+    width: 70%;
+  }
+}
+
+@media (min-width: 1200px)  {
+  .transparanzContainer{
+    width: 60%;
+  }
+}
+
+@media (min-width: 1400px)  {
+  .transparanzContainer{
+    width: 50%;
+  }
 }
 
 </style>
