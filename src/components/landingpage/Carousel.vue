@@ -3,9 +3,10 @@
     <div class="carousel-inner bg-danger bg-gradient">
       <div class="carousel-item " :class="latestPic">
           <div class="container d-flex justify-content-center p-4 infoContainer border">
-            <div class="row d-flex justify-content-center">
-              <div @click="updateStatus('Bot')">
-                {{ content[counter].city + content[counter].place }}
+            <div class="row d-flex justify-content-center pe-auto">
+              <div @click="updateStatus('Bot')" >
+                <strong class="pointerDiv"> {{ content[counter].city + content[counter].place }} </strong>
+                <br>
                 <a v-if="content[counter].link !== ''" :href="content[counter].link"> Mehr Informationen </a>
               </div>
             </div>
@@ -36,7 +37,7 @@ export default defineComponent({
     const counter = ref<number>(0);
     const status = ref<string>("Home");
 
-    console.log(content[counter.value])
+    console.log(content[counter.value]);
 
     const nextItem = () => {
         if (counter.value < content.length-1) {
@@ -45,7 +46,7 @@ export default defineComponent({
         }else{
           counter.value = 0;
         }
-    }
+    };
 
     const prevItem = () => {
       if (counter.value > 0) {
@@ -54,7 +55,7 @@ export default defineComponent({
       }else{
         counter.value = content.length;
       }
-    }
+    };
 
     const updateStatus = (label: string) => {
       status.value = label;
@@ -80,6 +81,10 @@ export default defineComponent({
 .carouselDiv{
   margin-top: 100px;
   color:white;
+}
+
+.pointerDiv {
+  cursor: pointer;
 }
 
 @media (min-width: 320px)  {
