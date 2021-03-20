@@ -35,8 +35,6 @@ export default defineComponent({
   name: "Bot",
   setup() {
     var content = botdata;
-
-
     return {
       content
     }
