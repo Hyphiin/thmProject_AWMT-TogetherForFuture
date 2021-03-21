@@ -2,8 +2,8 @@
 
   <div class="container searchContainer">
   <form class="d-flex">
-    <input v-model="searchText" class="form-control me-2" type="search" placeholder="Suche nach deiner Stadt..." aria-label="Search">
-    <button @click="searchTextChanged" class="btn btn-outline-success" type="submit">Search</button>
+    <input v-model="searchText" @input="searchTextChanged" class="form-control me-2" type="search" placeholder="Suche nach deiner Stadt..." aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
   </form>
   </div>
   <div class="container-md">
@@ -15,8 +15,8 @@
       <th scope="col">Link</th>
     </tr>
     </thead>
-    <tbody v-show="!loading">
-    <tr v-for="city in tempEvents" :key="city.city">
+    <tbody v-if="loading">
+    <tr v-for="city in Events" :key="city.city">
       <th scope="row"> {{ city.city }}</th>
       <td>{{ city.place }}</td>
       <td><a v-if="city.link !== ''" :href="city.link"> Mehr Informationen </a></td>
@@ -34,39 +34,41 @@ import botdata from '../../../bot/result/OrteAm19Maerz.json';
 export default defineComponent({
   name: "Bot",
   setup() {
+
     let content = botdata;
 
     let tempEvents = content;
 
     const searchText = ref<string>("");
 
-    const loading = ref<boolean>(false);
+    const loading = ref<boolean>(true);
 
     const searchTextChanged = () => {
       searchResult();
     };
 
     const searchResult = () => {
-      loading.value = true;
-      tempEvents = content
+      loading.value = false;
 
       if (searchText.value != '' && searchText.value) {
         setTimeout(() => {
-          loading.value = false;
+          loading.value = true;
         }, 950);
-        tempEvents = tempEvents.filter((item) => {
+
+        tempEvents = content.filter((item) => {
           return item.city
               .toUpperCase()
               .includes(searchText.value.toUpperCase())
         })
       }
       loading.value = false;
-      console.log("gefunden: ",tempEvents);
+      console.log("Value changed!", tempEvents);
       return tempEvents
     };
 
-    const test = computed(()=>{
-      return tempEvents
+    const Events = computed(()=>{
+      console.log("Computed!", tempEvents);
+      return tempEvents;
     })
 
     return {
@@ -76,7 +78,7 @@ export default defineComponent({
       loading,
       searchResult,
       searchTextChanged,
-      test
+      Events
     }
   }
 });
