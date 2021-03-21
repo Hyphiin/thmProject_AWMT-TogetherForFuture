@@ -6,7 +6,7 @@
   </form>
   </div>
   <div class="container-md">
-  <table class="table table-success table-striped table-hover">
+  <table class="table table-success table-striped table-hover" v-if="loading && Events.length > 0">
     <thead>
     <tr>
       <th scope="col">Stadt</th>
@@ -14,7 +14,7 @@
       <th scope="col">Link</th>
     </tr>
     </thead>
-    <tbody v-if="loading">
+    <tbody>
     <tr v-for="city in Events" :key="city.city">
       <th scope="row"> {{ city.city }}</th>
       <td>{{ city.place }}</td>
@@ -22,6 +22,7 @@
     </tr>
     </tbody>
   </table>
+    <p v-else>Leider keine passenden Ergebnisse gefunden!</p>
   </div>
 </template>
 
