@@ -3,7 +3,7 @@
   <div class="container searchContainer">
   <form class="d-flex">
     <input v-model="searchText" class="form-control me-2" type="search" placeholder="Suche nach deiner Stadt..." aria-label="Search">
-    <!--<button class="btn btn-outline-success" type="submit">Search</button>-->
+    <button @click="searchTextChanged" class="btn btn-outline-success" type="submit">Search</button>
   </form>
   </div>
   <div class="container-md">
@@ -15,8 +15,8 @@
       <th scope="col">Link</th>
     </tr>
     </thead>
-    <tbody>
-    <tr v-for="city in searchResult" :key="city.city">
+    <tbody v-show="!loading">
+    <tr v-for="city in tempEvents" :key="city.city">
       <th scope="row"> {{ city.city }}</th>
       <td>{{ city.place }}</td>
       <td><a v-if="city.link !== ''" :href="city.link"> Mehr Informationen </a></td>
@@ -28,7 +28,7 @@
 
 
 <script lang="ts">
-import {defineComponent, computed, ref} from 'vue';
+import {computed, defineComponent, ref} from 'vue';
 import botdata from '../../../bot/result/OrteAm19Maerz.json';
 
 export default defineComponent({
@@ -36,26 +36,47 @@ export default defineComponent({
   setup() {
     let content = botdata;
 
+    let tempEvents = content;
+
     const searchText = ref<string>("");
 
-    const searchResult = computed(() => {
-      let tempEvents = content
+    const loading = ref<boolean>(false);
+
+    const searchTextChanged = () => {
+      searchResult();
+    };
+
+    const searchResult = () => {
+      loading.value = true;
+      tempEvents = content
 
       if (searchText.value != '' && searchText.value) {
+        setTimeout(() => {
+          loading.value = false;
+        }, 950);
         tempEvents = tempEvents.filter((item) => {
           return item.city
               .toUpperCase()
               .includes(searchText.value.toUpperCase())
         })
       }
-
+      loading.value = false;
+      console.log("gefunden: ",tempEvents);
       return tempEvents
-    });
+    };
+
+    const test = computed(()=>{
+      return tempEvents
+    })
 
     return {
       content,
       searchText,
-      searchResult
+      tempEvents,
+      loading,
+      searchResult,
+      searchTextChanged,
+      test
     }
   }
 });
