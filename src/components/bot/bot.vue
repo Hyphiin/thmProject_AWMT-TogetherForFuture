@@ -2,8 +2,8 @@
 
   <div class="container searchContainer">
   <form class="d-flex">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
+    <input v-model="searchText" class="form-control me-2" type="search" placeholder="Suche nach deiner Stadt..." aria-label="Search">
+    <!--<button class="btn btn-outline-success" type="submit">Search</button>-->
   </form>
   </div>
   <div class="container-md">
@@ -16,7 +16,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr v-for="city in content" :key="city.city">
+    <tr v-for="city in searchResult" :key="city.city">
       <th scope="row"> {{ city.city }}</th>
       <td>{{ city.place }}</td>
       <td><a v-if="city.link !== ''" :href="city.link"> Mehr Informationen </a></td>
@@ -28,15 +28,34 @@
 
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {defineComponent, computed, ref} from 'vue';
 import botdata from '../../../bot/result/OrteAm19Maerz.json';
 
 export default defineComponent({
   name: "Bot",
   setup() {
-    var content = botdata;
+    let content = botdata;
+
+    const searchText = ref<string>("");
+
+    const searchResult = computed(() => {
+      let tempEvents = content
+
+      if (searchText.value != '' && searchText.value) {
+        tempEvents = tempEvents.filter((item) => {
+          return item.city
+              .toUpperCase()
+              .includes(searchText.value.toUpperCase())
+        })
+      }
+
+      return tempEvents
+    });
+
     return {
-      content
+      content,
+      searchText,
+      searchResult
     }
   }
 });
