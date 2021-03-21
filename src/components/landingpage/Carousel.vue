@@ -1,85 +1,131 @@
 <template>
-
-  <!--Angefangen, hiervon kopiert: https://bootstrap-vue.org/docs/components/carousel# -->
-
-  <div>
-    <b-carousel
-        id="carousel-1"
-        v-model="slide"
-        :interval="4000"
-        controls
-        indicators
-        background="#ababab"
-        img-width="1024"
-        img-height="480"
-        style="text-shadow: 1px 1px 2px #333;"
-        @sliding-start="onSlideStart"
-        @sliding-end="onSlideEnd"
-    >
-
-      <b-carousel-slide>
-      <div class="container bg-danger">
-        <h2>Grüne Demo</h2>
-        <p>Am 24.09.2021 in München!</p>
+  <div id="carouselExampleControls" class=" container-md carousel slide carouselDiv" data-bs-ride="carousel">
+    <div class="carousel-inner bg-danger bg-gradient">
+      <div class="carousel-item " :class="latestPic">
+          <div class="container d-flex justify-content-center p-4 infoContainer border">
+            <div class="row d-flex justify-content-center pe-auto">
+              <div @click="updateStatus('Bot')" >
+                <strong class="pointerDiv"> {{ content[counter].city + content[counter].place }} </strong>
+                <br>
+                <a v-if="content[counter].link !== ''" :href="content[counter].link"> Mehr Informationen </a>
+              </div>
+            </div>
+          </div>
       </div>
-      </b-carousel-slide>
-
-      <b-carousel-slide>
-        <div class="container bg-info">
-          <h2>Blau Demo</h2>
-          <p>Am 24.09.2021 in München!</p>
-        </div>
-      </b-carousel-slide>
-
-      <b-carousel-slide>
-        <div class="container bg-warning">
-          <h2>Gelbe Demo</h2>
-          <p>Am 24.09.2021 in München!</p>
-        </div>
-      </b-carousel-slide>
-
-      <a href="#" role="button" aria-controls="carousel-1___BV_inner_" class="carousel-control-prev" aria-disabled="true">
-        <span aria-hidden="true" class="carousel-control-prev-icon"></span>
-        <span class="sr-only">Previous slide</span>
-      </a>
-      <a href="#" role="button" aria-controls="carousel-1___BV_inner_" class="carousel-control-next">
-        <span aria-hidden="true" class="carousel-control-next-icon"></span>
-        <span class="sr-only">Next slide</span>
-      </a>
-
-      <ol id="carousel-1___BV_indicators_" aria-hidden="false" aria-label="Select a slide to display" aria-owns="carousel-1___BV_inner_" class="carousel-indicators">
-        <li role="button" id="carousel-1___BV_indicator_1_" tabindex="0" aria-current="true" aria-label="Goto slide 1" aria-controls="carousel-1___BV_inner_" class="active" aria-describedby="__BVID__518"></li>
-        <li role="button" id="carousel-1___BV_indicator_2_" tabindex="0" aria-current="false" aria-label="Goto slide 2" aria-controls="carousel-1___BV_inner_" class="" aria-describedby="__BVID__519"></li>
-        <li role="button" id="carousel-1___BV_indicator_3_" tabindex="0" aria-current="false" aria-label="Goto slide 3" aria-controls="carousel-1___BV_inner_" class="" aria-describedby="__BVID__520"></li>
-      </ol>
-    </b-carousel>
-
-    <p class="mt-4">
-      Slide #: {{ slide }}<br>
-      Sliding: {{ sliding }}
-    </p>
+    </div>
+    <button @click="prevItem" class="carousel-control-prev" type="button">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button @click="nextItem" class="carousel-control-next" type="button">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
+
+<script lang="ts">
+import botdata from "../../../bot/result/places.json";
+import {defineComponent, ref} from "vue";
+
+export default defineComponent({
+  name: "Carousel",
+  setup(props, context) {
+    const content = botdata;
+    const latestPic = ref<string>("active");
+    const counter = ref<number>(0);
+    const status = ref<string>("Home");
+
+    console.log(content[counter.value]);
+
+    const nextItem = () => {
+        if (counter.value < content.length-1) {
+          counter.value++;
+          console.log(counter.value)
+        }else{
+          counter.value = 0;
+        }
+    };
+
+    const prevItem = () => {
+      if (counter.value > 0) {
+        counter.value--;
+        console.log(counter.value)
+      }else{
+        counter.value = content.length;
+      }
+    };
+
+    const updateStatus = (label: string) => {
+      status.value = label;
+      context.emit('clickedCarousel', status.value);
+      return status.value;
+    };
+
     return {
-      slide: 0,
-      sliding: null
-    }
-  },
-  methods: {
-    onSlideStart(slide) {
-      if (slide) {
-        this.sliding = true
-      }
-    },
-    onSlideEnd(slide) {
-      if (slide) {
-        this.sliding = false
-      }
+      content,
+      latestPic,
+      nextItem,
+      counter,
+      prevItem,
+      updateStatus
     }
   }
-}
+
+});
 </script>
+
+<style lang="css" scoped>
+
+.carouselDiv{
+  margin-top: 100px;
+  color:white;
+}
+
+.pointerDiv {
+  cursor: pointer;
+}
+
+@media (min-width: 320px)  {
+  .carouselDiv{
+    margin-top: 110px;
+  }
+}
+@media (min-width: 425px)  {
+  .carouselDiv{
+    margin-top: 110px;
+  }
+}
+
+@media (min-width: 768px)  {
+  .carouselDiv{
+    margin-top: 105px;
+  }
+}
+
+@media (min-width: 992px) {
+  .carouselDiv{
+    margin-top: 100px;
+  }
+}
+
+@media (min-width: 1200px)  {
+  .carouselDiv{
+    margin-top: 100px;
+  }
+}
+
+@media (min-width: 1400px)  {
+  .carouselDiv{
+    margin-top: 100px;
+  }
+}
+
+</style>
+
+
+
+
+
+

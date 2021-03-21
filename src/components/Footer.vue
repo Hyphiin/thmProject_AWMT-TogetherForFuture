@@ -86,7 +86,6 @@
             <a class="text-white" href="#" @click="updateStatus('Impressum')">Impressum</a>
             <a class="text-white" href="#" @click="updateStatus('Datenschutzerklärung')">Datenschutzerklärung</a>
             <a class="text-white" href="#" @click="updateStatus('Transparenz')">Transparenz</a>
-            <a class="text-white" href="#" @click="updateStatus('Bot')">Bottest</a>
           </section>
           <!-- Section: Bottom Bar -->
         </div>

@@ -1,27 +1,140 @@
 <template>
-    <div>
-        <h1> Demos </h1>
-        <ul>
-        <li v-for="city in content" :key="city.city">{{ city.city + city.place }} <a v-if="city.link != ''" :href="city.link" > Mehr Informationen </a>       </li>
-        </ul>
-    </div>
+
+  <div class="container searchContainer">
+  <form class="d-flex">
+    <input v-model="searchText" @input="searchTextChanged" class="form-control me-2" type="search" placeholder="Suche nach deiner Stadt..." aria-label="Search">
+  </form>
+  </div>
+  <div class="container-md">
+  <table class="table table-success table-striped table-hover">
+    <thead>
+    <tr>
+      <th scope="col">Stadt</th>
+      <th scope="col">Wann & Wo</th>
+      <th scope="col">Link</th>
+    </tr>
+    </thead>
+    <tbody v-if="loading">
+    <tr v-for="city in Events" :key="city.city">
+      <th scope="row"> {{ city.city }}</th>
+      <td>{{ city.place }}</td>
+      <td><a v-if="city.link !== ''" :href="city.link"> Mehr Informationen </a></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
 </template>
 
+
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {computed, defineComponent, ref} from 'vue';
 import botdata from '../../../bot/result/OrteAm19Maerz.json';
 
 export default defineComponent({
   name: "Bot",
-  setup(){
-  var content = botdata;
-  
+  setup() {
 
-  return{
-      content
-  }
-  }
+    let content = botdata;
 
-    
+    let tempEvents = content;
+
+    const searchText = ref<string>("");
+
+    const loading = ref<boolean>(true);
+
+    const searchTextChanged = () => {
+      searchResult();
+    };
+
+    const searchResult = () => {
+      loading.value = false;
+
+      if (searchText.value != '' && searchText.value) {
+        setTimeout(() => {
+          loading.value = true;
+        }, 950);
+
+        tempEvents = content.filter((item) => {
+          return item.city
+              .toUpperCase()
+              .includes(searchText.value.toUpperCase())
+        })
+      }
+      loading.value = false;
+      console.log("Value changed!", tempEvents);
+      return tempEvents
+    };
+
+    const Events = computed(()=>{
+      loading.value;
+      console.log("Computed!", tempEvents);
+      return tempEvents;
+    })
+
+    return {
+      content,
+      searchText,
+      tempEvents,
+      loading,
+      searchResult,
+      searchTextChanged,
+      Events
+    }
+  }
 });
 </script>
+
+<style scoped>
+.searchContainer{
+  width: 50%;
+  margin-top:120px;
+  margin-bottom: 2%;
+}
+
+@media (min-width: 320px)  {
+  .searchContainer{
+    width: 100%;
+    margin-top:120px;
+    margin-bottom: 2%;
+  }
+}
+@media (min-width: 425px)  {
+  .searchContainer{
+    width: 90%;
+    margin-top:120px;
+    margin-bottom: 2%;
+  }
+}
+
+@media (min-width: 768px)  {
+  .searchContainer{
+    width: 70%;
+    margin-top:110px;
+    margin-bottom: 2%;
+  }
+}
+
+@media (min-width: 992px) {
+  .searchContainer{
+    width: 50%;
+    margin-top:95px;
+    margin-bottom: 2%;
+  }
+}
+
+@media (min-width: 1200px)  {
+  .searchContainer{
+    width: 50%;
+    margin-top:95px;
+    margin-bottom: 2%;
+  }
+}
+
+@media (min-width: 1400px)  {
+  .searchContainer{
+    width: 50%;
+    margin-top:100px;
+    margin-bottom: 2%;
+  }
+}
+</style>
