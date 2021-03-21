@@ -50,7 +50,7 @@ export default defineComponent({
     const searchResult = () => {
       loading.value = false;
 
-      if (searchText.value != '' && searchText.value) {
+      if (searchText.value != '' && searchText.value && searchText.value.length>0) {
         setTimeout(() => {
           loading.value = true;
         }, 950);
@@ -60,6 +60,9 @@ export default defineComponent({
               .toUpperCase()
               .includes(searchText.value.toUpperCase())
         })
+      }
+      else{
+        tempEvents = content;
       }
       loading.value = false;
       console.log("Value changed!", tempEvents);
