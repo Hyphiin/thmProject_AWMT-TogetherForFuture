@@ -15,6 +15,10 @@
     </div>-->
 
     <div id="app" class="pt-5">
+      <div class="kontakt d-flex justify-content-start flex-column">
+        <h3 class="fw-bold justify-content-start d-flex">Transparenz</h3>
+        <div class="dreieck2"></div>
+      </div>
       <div class="">
         <div class="container container-sm toggle transparanzContainer mb-3 pt-2 pb-2" :class="{ active: isActive[0] }">
           <div class="toggle-title font-weight-bolder text-secondary" @click="toggleContent(0)">
@@ -293,6 +297,7 @@ export default defineComponent({
   position: relative;
   cursor: pointer;
 }
+
 .project-row1 {
   background-color: #f5f5f5;
 }
@@ -329,24 +334,20 @@ div.dreieck {
   border-bottom: 10px solid transparent;
 }
 
-.fadeHeight-enter-active,
-.fadeHeight-leave-active {
-  transition: all 0.3s;
-  max-height: 230px;
+div.dreieck2 {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin-top: -5px;
+  margin-bottom: 20px;
+  border-left: 320px solid #67bb7d8a;
+  border-right: 0px solid transparent;
+  border-bottom: 10px solid transparent;
 }
 
-.fadeHeight-enter,
-.fadeHeight-leave-to {
-  opacity: 0;
-  max-height: 0px;
-}
-
-.title {
-  background-color: whitesmoke;
-}
-
-.content {
-  background-color: beige;
+.kontakt{
+  margin-top: 0;
+  margin-left: 25%;
 }
 
 .linktext {
@@ -358,6 +359,7 @@ div.dreieck {
   box-shadow: 2px 1px 1px 1px rgba(0, 0, 0, 0.25);
   border-radius: 49px;
   width: 50%;
+  background-color: #67bb7d52;
 }
 
 @media (min-width: 320px) {
@@ -367,6 +369,9 @@ div.dreieck {
   div.dreieck {
     border-left: 296px solid #67bb7d8a;
     border-right: 0 solid transparent;
+  }
+  .kontakt{
+    margin-left: 10px;
   }
 }
 
@@ -378,6 +383,9 @@ div.dreieck {
     border-left: 401px solid #67bb7d8a;
     border-right: 0 solid transparent;
   }
+  .kontakt{
+    margin-left: 10px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -388,7 +396,9 @@ div.dreieck {
     border-left: 644px solid #67bb7d8a;
     border-right: 100px solid transparent;
   }
-
+  .kontakt{
+    margin-left: 5%;
+  }
 }
 
 @media (min-width: 992px) {
@@ -397,6 +407,9 @@ div.dreieck {
   }
   div.dreieck {
     border-left: 868px solid #67bb7d8a;
+  }
+  .kontakt{
+    margin-left: 16%;
   }
 }
 
@@ -407,6 +420,9 @@ div.dreieck {
   div.dreieck {
     border-left: 1076px solid #67bb7d8a;
   }
+  .kontakt{
+    margin-left: 21%;
+  }
 }
 
 @media (min-width: 1400px) {
@@ -415,6 +431,9 @@ div.dreieck {
   }
   div.dreieck {
     border-left: 1276px solid #67bb7d8a;
+  }
+  .kontakt{
+    margin-left: 25%;
   }
 }
 

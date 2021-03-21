@@ -1,35 +1,37 @@
 <template>
   <div class="container px-4">
-  <div class="row gx-5">
-    <div class="col kontakt">
-      <h3 class="fw-bold justify-content-start d-flex">Kontakt</h3>
-      <div class="dreieck"></div>
-      <small class="small">Kontaktieren sie uns gerne!</small>
-    </div>
-    <div class="col">
-      <div class="card formular">
-        <div class="card-body">
-          <form class="contact-form" @submit.prevent="sendEmail">
-            <div class="form-group">
+    <div class="row gx-5">
+      <div class="col">
+        <div class="kontakt">
+          <h3 class="fw-bold justify-content-start d-flex">Kontakt</h3>
+          <div class="dreieck"></div>
+          <small class="small">Kontaktieren sie uns gerne!</small>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card formular">
+          <div class="card-body">
+            <form class="contact-form" @submit.prevent="sendEmail">
+              <div class="form-group">
 
-              <input name="user_email" type="email" class="form-control" id="exampleInputEmail1"
-                     aria-describedby="emailHelp" placeholder="Email">
-            </div>
-            <div class="form-group">
+                <input name="user_email" type="email" class="form-control" id="exampleInputEmail1"
+                       aria-describedby="emailHelp" placeholder="Email">
+              </div>
+              <div class="form-group">
 
-              <input name="user_name" type="text" class="form-control" id="exampleInputName1" placeholder="Name">
-            </div>
-            <div class="form-group">
+                <input name="user_name" type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+              </div>
+              <div class="form-group">
 
               <textarea name="message" type="text" class="form-control" id="exampleInputMessage1"
                         placeholder="Nachricht..."></textarea>
-            </div>
-            <input type="submit" value="Abschicken" class="btn text-white">
-          </form>
+              </div>
+              <input type="submit" value="Abschicken" class="btn text-white">
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -69,19 +71,15 @@ export default defineComponent({
   background-color: #67bb7d;
 }
 
-.small{
-  padding-right: 70px;
-}
-
-.formular{
+.formular {
   margin: 100px 10px 100px 10px;
 }
 
-.kontakt{
-  margin: 100px 10px 100px 10px;
+.kontakt {
+  margin: 0px 10px 0px 10px;
 }
 
-.form-control{
+.form-control {
   margin-top: 5px;
 }
 
@@ -96,66 +94,79 @@ div.dreieck {
   border-bottom: 10px solid transparent;
 }
 
-@media (min-width: 320px)  {
-  .formular{
-    width: 425px;
-    margin: 0;
-    padding: 0;
+@media (min-width: 320px) {
+  .formular {
+    margin: 30px 0 50px 0;
+    width: 320px;
   }
-  .kontakt{
-    margin: 50px 10px 100px 50px;
+  .kontakt {
+    margin: 70px auto 0 15px;
   }
-}
-@media (min-width: 425px)  {
-  .formular{
-    width: 425px;
-    margin-left: -125px;
-    padding: 0;
-  }
-  .kontakt{
-    margin: 50px 10px 100px 50px;
+  .small{
+    margin-right: 20%;
   }
 }
 
-@media (min-width: 768px)  {
-  .formular{
-    width: 500px;
-    margin: 50px auto 100px 0;
+@media (min-width: 425px) {
+  .formular {
+    margin: 30px 0 50px 0;
+    width: 425px;
   }
-  .kontakt{
-    margin: 100px auto 0 100px;
+  .kontakt {
+    margin: 70px auto 0 15px;
   }
   .small{
-    margin-right: 140px;
+    margin-right: 20%;
+  }
+}
+
+@media (min-width: 768px) {
+  .formular {
+    margin: 30px auto 100px 15%;
+    width: 498px;
+  }
+  .kontakt {
+    margin: 70px auto 0 80px;
+  }
+  .small{
+    margin-right: 20%;
   }
 }
 
 @media (min-width: 992px) {
-  .formular{
-    margin: 50px auto 100px 100px;
+  .formular {
+    margin: 50px auto 100px 25%;
   }
-  .kontakt{
-    margin: 100px auto 0 200px;
+  .kontakt {
+    margin: 50px auto 0 210px;
   }
   .small{
-    margin-right: 140px;
+    margin-right: 200px;
   }
 }
 
-@media (min-width: 1200px)  {
-  .formular{
-    margin: 50px auto 100px 200px;
+@media (min-width: 1200px) {
+  .formular {
+    margin: 100px auto 120px 100px;
   }
-  .kontakt{
-    margin: 100px auto 0 300px;
+  .kontakt {
+    margin: 100px auto 0 50px;
   }
   .small{
-    margin-right: 220px;
+    margin-right: 0px;
   }
 }
 
-@media (min-width: 1400px)  {
-
+@media (min-width: 1400px) {
+  .formular {
+    margin: 120px auto 180px 50px;
+  }
+  .kontakt {
+    margin: 120px auto 0 100px;
+  }
+  .small{
+    margin-right: 100px;
+  }
 }
 
 </style>

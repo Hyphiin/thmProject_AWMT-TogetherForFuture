@@ -1,10 +1,13 @@
 <template>
-  <div class="d-flex flex-row justify-content-evenly">
-    <div class="kontakt d-flex justify-content-start flex-column">
-      <h3 class="fw-bold justify-content-start d-flex">Presse</h3>
-      <hr/>
-      <div>
-        <div class="col-lg-12 col-md-6">
+  <div class="container px-4">
+    <div class="row gx-5">
+
+      <div class="col">
+        <div class="kontakt">
+          <h3 class="fw-bold justify-content-start d-flex">Presse</h3>
+          <div class="dreieck"></div>
+        </div>
+        <div class="details">
           <ul class="list-unstyled">
             <li class="text-start">
               <p>{{ evName }}</p>
@@ -17,7 +20,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-lg-12 col-md-6 mt-5">
+        <div class="details">
           <ul class="list-unstyled">
             <li class="d-flex text-start">
               <p class="fw-bold">Mail: </p>
@@ -30,24 +33,24 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="d-flex justify-content-center formular">
-      <div class="card">
-        <div class="card-body">
-          <form class="contact-form" @submit.prevent="sendEmail">
-            <div class="form-group">
-              <input name="user_email" type="email" class="form-control" id="exampleInputEmail1"
-                     aria-describedby="emailHelp" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <input name="user_name" type="text" class="form-control" id="exampleInputName1" placeholder="Name">
-            </div>
-            <div class="form-group">
+      <div class="col ">
+        <div class="card formular">
+          <div class="card-body">
+            <form class="contact-form" @submit.prevent="sendEmail">
+              <div class="form-group">
+                <input name="user_email" type="email" class="form-control" id="exampleInputEmail1"
+                       aria-describedby="emailHelp" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input name="user_name" type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+              </div>
+              <div class="form-group">
               <textarea name="message" type="text" class="form-control" id="exampleInputMessage1"
                         placeholder="Nachricht..."></textarea>
-            </div>
-            <input type="submit" value="Abschicken" class="btn text-white">
-          </form>
+              </div>
+              <input type="submit" value="Abschicken" class="btn text-white">
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -103,20 +106,107 @@ export default defineComponent({
   background-color: #67bb7d;
 }
 
-.formular {
-  margin: 100px 10px 100px 10px;
-}
-
-.kontakt {
-  margin: 100px 10px 100px 10px;
-}
-
 .mail {
   color: #67bb7d;
   text-decoration: none;
 }
 
-.form-control{
+.form-control {
   margin-top: 5px;
+}
+
+.formular {
+  margin: 100px 10px 100px 10px;
+}
+
+.kontakt {
+  margin: 0px 10px 0px 10px;
+}
+
+
+div.dreieck {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin-top: -5px;
+  margin-bottom: 20px;
+  border-left: 200px solid #67bb7d8a;
+  border-right: 100px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+@media (min-width: 320px) {
+  .formular {
+    margin: 30px 0 50px -23px;
+    width: 320px;
+  }
+  .kontakt {
+    margin: 70px auto 0 0;
+  }
+  .details {
+    margin: 0 auto 0 15px;
+  }
+}
+
+@media (min-width: 425px) {
+  .formular {
+    margin: 30px 0 50px -24px;
+    width: 425px;
+  }
+  .kontakt {
+    margin: 70px auto 0 15px;
+  }
+  .details {
+    margin: 0 auto 0 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .formular {
+    margin: 30px auto 100px 15%;
+    width: 498px;
+  }
+  .kontakt {
+    margin: 50px auto 0 15%;
+  }
+  .details {
+    margin: 0 auto 0 20%;
+  }
+}
+
+@media (min-width: 992px) {
+  .formular {
+    margin: 170px auto 170px 0;
+  }
+  .kontakt {
+    margin: 150px auto 0  25%;
+  }
+  .details {
+    margin: 0 auto 0 25%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .formular {
+    margin: 120px auto 150px 0px;
+  }
+  .kontakt {
+    margin: 100px auto 0 50px;
+  }
+  .details {
+    margin: 0 auto 0 100px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .formular {
+    margin: 120px auto 180px 200px;
+  }
+  .kontakt {
+    margin: 120px auto 0 100px;
+  }
+  .details {
+    margin: 0 auto 0 150px;
+  }
 }
 </style>
