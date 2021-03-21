@@ -2,7 +2,7 @@
   <div class="d-flex flex-row justify-content-evenly">
     <div class="kontakt d-flex justify-content-start flex-column">
       <h3 class="fw-bold justify-content-start d-flex">Impressum</h3>
-      <hr/>
+      <div class="dreieck"></div>
       <div>
         <div class="col-lg-12 col-md-6">
           <ul class="list-unstyled">
@@ -115,4 +115,57 @@ export default defineComponent({
   color: #67bb7d;
   text-decoration: none;
 }
+
+div.dreieck {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin-top: -5px;
+  margin-bottom: 20px;
+  border-left: 320px solid #67bb7d8a;
+  border-right: 0px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.kontakt{
+  margin-top: 5%;
+}
+
+@media (min-width: 320px)  {
+  .kontakt{
+    margin-top: 10%;
+    margin-left: 10px;
+  }
+}
+@media (min-width: 425px)  {
+  .kontakt{
+    margin-top: 10%;
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: 768px)  {
+  .kontakt{
+    margin-top: 5%;
+  }
+}
+
+@media (min-width: 992px) {
+  .kontakt{
+    margin-top: 4%;
+  }
+}
+
+@media (min-width: 1200px)  {
+  .kontakt{
+    margin-top: 4%;
+  }
+}
+
+@media (min-width: 1400px)  {
+  .kontakt{
+    margin-top: 4%;
+  }
+}
+
 </style>

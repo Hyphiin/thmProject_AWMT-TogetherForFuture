@@ -12,7 +12,9 @@
     "bootstrap": "^5.0.0-beta2",
     "core-js": "^3.6.5",
     "emailjs-com": "^2.6.4",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vue-slick-carousel": "^1.0.6",
+    "vue3-animated-carousel": "^1.1.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.33.0",
