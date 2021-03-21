@@ -15,7 +15,9 @@
     </div>
 
     <div v-if="siteComponent==='Donation'">
-      <Donations class="component"/>
+      <Donations class="component"
+      @updateStatus="onClickFooter"/>
+
     </div>
 
     <div v-if="siteComponent==='Goals'">

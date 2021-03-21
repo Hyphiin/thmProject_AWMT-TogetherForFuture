@@ -65,8 +65,8 @@
           <p class="spenden-text">
             Bitte geben Sie einen Spendenbetrag ein
           </p>
-              <input type="text">
-              <input type="range" class="form-control-range" id="formControlRange">
+              <input type="text" v-model="donSum">
+              <input type="range" class="form-control-range" min="5" max="500" step="1" id="formControlRange" v-model="donSum">
           <br> <br>
           <p class="spenden-text">
           Wählen sie einen Spendenrhythmus:
@@ -106,7 +106,7 @@
       <div class="row">
         <p>
           <b>Transparenz</b> ist uns wichtig. Deshalb haben wir uns der Initiative Transparente Zivilgesellschaft angeschlossen.
-          Wir verpflichten uns diese <a href="">zehn</a> Informationen der Öffentlichkeit zur Verfügung zu stellen und aktuell <!-- TODO: Link zur Transparenz Seite -->
+          Wir verpflichten uns diese <a href="#"  @click="updateStatus('Transparenz')">zehn</a> Informationen der Öffentlichkeit zur Verfügung zu stellen und aktuell <!-- TODO: Link zur Transparenz Seite -->
           zu halten.
         </p>
         <img src="../../assets/images/csm_Transparente_ZivilgesellschaftPNG_c0c522c331.png" alt="Transparenz" class="zertifikat-img">
@@ -117,10 +117,25 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {defineComponent,ref} from 'vue';
 
 export default defineComponent({
-  name: "Donations"
+  name: "Donations",
+  setup(props,context){
+    const status = ref<string>("Donation");
+    const donSum = ref<number>(0);
+
+    const updateStatus = (label: string) => {
+      status.value = label;
+      context.emit('updateStatus', status.value);
+      return status.value;
+    };
+    return{
+      status,
+      donSum,
+      updateStatus
+    }
+  }
 });
 </script>
 
