@@ -78,14 +78,19 @@
           </div>
         </div>
         <!--Grid column-->
-        <div class="container pt-4">
+        <div class="container px-4">
           <!-- Section: Bottom Bar -->
-          <section class="d-flex flex-row justify-content-between mb-5">
-            <a class="text-white" href="#" @click="updateStatus('Kontakt')">Kontakt</a>
-            <a class="text-white" href="#" @click="updateStatus('Presse')">Presse</a>
-            <a class="text-white" href="#" @click="updateStatus('Impressum')">Impressum</a>
-            <a class="text-white" href="#" @click="updateStatus('Datenschutzerklärung')">Datenschutzerklärung</a>
-            <a class="text-white" href="#" @click="updateStatus('Transparenz')">Transparenz</a>
+          <section class="row gx-5">
+            <div class="col mx-4 my-2">
+            <a class="text-white" href="#" @click="updateStatus('Kontakt')">Kontakt</a></div>
+            <div class="col mx-4 my-2">
+            <a class="text-white" href="#" @click="updateStatus('Presse')">Presse</a></div>
+            <div class="col mx-4 my-2">
+            <a class="text-white" href="#" @click="updateStatus('Impressum')">Impressum</a></div>
+            <div class="col mx-4 my-2">
+            <a class="text-white" href="#" @click="updateStatus('Datenschutzerklärung')">Datenschutzerklärung</a></div>
+            <div class="col mx-4 my-2">
+            <a class="text-white" href="#" @click="updateStatus('Transparenz')">Transparenz</a></div>
           </section>
           <!-- Section: Bottom Bar -->
         </div>
