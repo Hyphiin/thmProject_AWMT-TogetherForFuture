@@ -3,7 +3,6 @@
   <div class="container searchContainer">
   <form class="d-flex">
     <input v-model="searchText" @input="searchTextChanged" class="form-control me-2" type="search" placeholder="Suche nach deiner Stadt..." aria-label="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
   </form>
   </div>
   <div class="container-md">
