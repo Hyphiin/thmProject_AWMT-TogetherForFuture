@@ -67,6 +67,7 @@ export default defineComponent({
     };
 
     const Events = computed(()=>{
+      loading.value;
       console.log("Computed!", tempEvents);
       return tempEvents;
     })
