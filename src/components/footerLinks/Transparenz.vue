@@ -359,7 +359,7 @@ div.dreieck2 {
   box-shadow: 2px 1px 1px 1px rgba(0, 0, 0, 0.25);
   border-radius: 49px;
   width: 50%;
-  background-color: #67bb7d52;
+  background-color: #F5F5F5;
 }
 
 @media (min-width: 320px) {

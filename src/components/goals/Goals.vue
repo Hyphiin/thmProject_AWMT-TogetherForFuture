@@ -293,7 +293,6 @@ export default defineComponent({
   margin-left: 10%;
 }
 
-
 .infoDiv {
   margin-top: 90px;
 }
@@ -334,6 +333,10 @@ export default defineComponent({
   width: 700px;
 }
 
+.accordion-button:not(.collapsed) {
+  color: #67bb7d;
+  background-color: #67bb7d52;
+}
 
 @media (min-width: 320px) {
   .bigPic {
@@ -360,8 +363,8 @@ export default defineComponent({
 @media (min-width: 768px) {
   .bigPic {
     width: 768px;
-    height: 400px;
-    margin-top: -40px;
+    height: auto;
+    margin-top: -100px;
   }
   .list-group{
     margin-top: 10%;
@@ -370,17 +373,17 @@ export default defineComponent({
 
 @media (min-width: 992px) {
   .bigPic {
-    width: 768px;
-    height: 400px;
-    margin-top: -40px;
+    width: 992px;
+    height: auto;
+    margin-top: -200px;
   }
 }
 
 @media (min-width: 1200px) {
   .bigPic {
     width: 1200px;
-    height: 600px;
-    margin-top: -40px;
+    height: auto;
+    margin-top: -200px;
   }
 }
 
@@ -388,7 +391,7 @@ export default defineComponent({
   .bigPic {
     width: 1400px;
     height: 700px;
-    margin-top: -40px;
+    margin-top: -100px;
   }
 }
 

@@ -12,20 +12,20 @@
       </div>
     </div>
 
-
     <div class="container d-flex mt-5 pt-5 p-4">
       <div class="row d-flex ms-4 ps-5">
         <h4 class="fw-bold" style="text-align: right;">PROJEKTE</h4>
       </div>
     </div>
 
-    <div class="container-fluid">
-      <div class="row project-row1">
-        <div class="col-4 pt-3 mb-3">
+    <div class="container pt-3 pb-1">
+
+      <div class="row mx-auto project-row1">
+        <div class="col pt-3 px-3 mx-3">
           <img src="../../assets/images/logos/forfuture2048x2048-980x980.png" class="img-fluid img-logo"
                alt="for-future-bund">
         </div>
-        <div class="col-7 description-text pt-5">
+        <div class="col pt-5 px-5 mx-5 description-text">
           <h4 class="project-header">FOR FUTURE-BÜNDNIS</h4>
           <p>
             Als For Future-Bündnis vernetzen und aktivieren wir die Gesellschaft in all ihren Facetten; dabei
@@ -38,12 +38,12 @@
         </div>
       </div>
 
-      <div class="row project-row2">
-        <div class="col-4 pt-4 mb-3">
+      <div class="row mx-auto project-row2">
+        <div class="col pt-3 px-3 mx-3">
           <img src="../../assets/images/logos/klimastreik-hero-earh-980x890.jpg" class="img-fluid img-logo"
                alt="for-future-bund">
         </div>
-        <div class="col-7 description-text pt-4 mt-2">
+        <div class="col description-text pt-5 px-5 mx-5">
           <h4 class="project-header">SEI DABEI – FÜR EINE ZUKUNFT OHNE KLIMAKRISE!</h4>
           <p>
             <b>Die Klimakrise macht keine Pause! </b> Wir nähern uns immer weiter dem Point of no return, deswegen
@@ -58,12 +58,12 @@
         </div>
       </div>
 
-      <div class="row project-row1">
-        <div class="col-4 pt-3 mb-3">
+      <div class="row mx-auto project-row1">
+        <div class="col pt-3 px-3 mx-3">
           <img src="../../assets/images/logos/H4FLogoInstaHighRes-980x980.png" class="img-fluid img-logo"
                alt="help-for-future">
         </div>
-        <div class="col-7 description-text pt-3">
+        <div class="col description-text pt-5 px-5 mx-5">
           <h4 class="project-header">HELP FOR FUTURE</h4>
           <p>
             Help for Future ist eine Non-profit-Plattform, die Aktivisti und Unterstützer*innen zusammenbringt. Jede*r
@@ -77,12 +77,12 @@
         </div>
       </div>
 
-      <div class="row project-row2">
-        <div class="col-4 pt-4">
+      <div class="row mx-auto project-row2">
+        <div class="col pt-3 px-3 mx-3">
           <img src="../../assets/images/logos/schwarm-for-future-logo.png" class="img-fluid img-logo"
                alt="schwarm-for-future">
         </div>
-        <div class="col-7 description-text pt-5">
+        <div class="col description-text pt-5 px-5 mx-5">
           <h4 class="project-header">SCHWARM FOR FUTURE</h4>
           <p>
             HALLO BUNDESTAG, WIR MÜSSEN ÜBER KLIMA-TATEN REDEN!
@@ -95,10 +95,10 @@
       </div>
     </div>
 
-    <div class="row project-row1">
-      <div class="col-4 pt-4">
+    <div class="row mx-auto project-row1">
+      <div class="col pt-3 px-3 mx-3">
       </div>
-      <div class="col-7 description-text pt-5">
+      <div class="col description-text pt-5 px-5 mx-5">
         <h4 class="project-header">UNTERSTÜTZUNG VON FRIDAYS FOR FUTURE</h4>
         <p>
           Wir unterstützen Fridays for Future nach Möglichkeit, z.B. bei der Durchführung von Kongressen,
@@ -118,13 +118,13 @@
 
     <div class="container-fluid p-4 ">
       <div class="row project-row2">
-        <div class="col-4 pt-4">
+        <div class="col pt-3 px-3 mx-3 pb-3">
           <a href="https://www.klima-allianz.de/" class="linktext">
             <img src="../../assets/images/logos/Logo_Klima-Allianz_Deutschland.jpg" class="img-fluid"
                  alt="klima-allianz">
           </a>
         </div>
-        <div class="col-7 description-text pt-5">
+        <div class="col description-text pt-5 px-5 mx-5">
           <p>
             Die Klima-Allianz Deutschland ist das breite gesellschaftliche Bündnis für den Klimaschutz.
             Mit über 120 Mitgliedsorganisationen aus den Bereichen Umwelt, Kirche, Entwicklung, Bildung, Kultur,
@@ -135,14 +135,14 @@
         </div>
       </div>
 
-      <div class="row project-row2">
-        <div class="col-4 pt-4">
+      <div class="row project-row1">
+        <div class="col pt-3 px-3 mx-3 pb-3">
           <a href="https://neues-wirtschaftswunder.de/" class="linktext">
             <img src="../../assets/images/logos/Logo_Initiative_Neues_Wirtschaftswunder-1280x1161.png"
                  class="img-fluid img-logo" alt="Initiative-Wirtschaftswunder">
           </a>
         </div>
-        <div class="col-7 description-text pt-5">
+        <div class="col description-text pt-5 px-5 mx-5">
           <p>
             Das Neue Wirtschaftswunder will mit einer breiten Allianz die Debatte um nachhaltige
             und sozial gerechte Investitionen im Rahmen notwendiger <b>Finanzhilfen</b> stärken
@@ -155,13 +155,13 @@
       </div>
 
       <div class="row project-row2">
-        <div class="col-4 pt-4">
+        <div class="col pt-3 px-3 mx-3 pb-3">
           <a href="https://www.zivilgesellschaft-ist-gemeinnuetzig.de/" class="linktext">
             <img src="../../assets/images/logos/allianz-logo-pur-sw.jpg" class="img-fluid "
                  alt="allianz-rechtssicherheit">
           </a>
         </div>
-        <div class="col-7 description-text pt-5">
+        <div class="col description-text pt-5 px-5 mx-5">
           <p>
             Wir sind Mitglied der Allianz “Rechtssicherheit für politische Willensbildung”, um gemeinsam mit
             anderen Organisationen das Gemeinnützigkeitsrecht zu ändern. Zivilgesellschaft ist gemeinnützig
@@ -172,14 +172,14 @@
         </div>
       </div>
 
-      <div class="row project-row2">
-        <div class="col-4 pt-4">
+      <div class="row project-row1">
+        <div class="col pt-5 mt-4 px-3 mx-3 pb-3">
           <a href="https://klima-mitbestimmung.jetzt/" class="linktext">
             <img src="../../assets/images/logos/klimamitbestimmung-logo-.png" class="img-fluid "
                  alt="klima-mitbestimmung">
           </a>
         </div>
-        <div class="col-7 description-text pt-5">
+        <div class="col description-text pt-5 px-5 mx-5">
           <p>
             Wir unterstützen die Initiative “Klima-Mitbestimmung JETZT”. Deutschland braucht mehr Mitbestimmung beim
             Klimaschutz.
@@ -199,13 +199,13 @@
       </div>
 
       <div class="row project-row2">
-        <div class="col-4 pt-4">
+        <div class="col pt-3 px-3 mx-3 pb-3">
           <a href="https://www.stopecocide.de/" class="linktext">
             <img src="../../assets/images/logos/Ecocide-logo-1280x716.png" class="img-fluid img-logo2"
                  alt="klima-mitbestimmung">
           </a>
         </div>
-        <div class="col-7 description-text pt-5">
+        <div class="col description-text pt-5 px-5 mx-5">
           <p>
             Wir unterstützen die gemeinnützige Stiftung “Stop Ecocide Foundation”, die 2017 von der visionären
             Rechtsanwältin
@@ -313,52 +313,61 @@ div.dreieck {
 
 @media (min-width: 320px) {
   .bigPic {
-    width: 375px;
+    width: 320px;
     height: 250px;
     margin-top: -40px;
   }
-
   div.dreieck {
     border-left: 196px solid #67bb7d8a;
   }
-
+  .img-logo {
+    height: auto;
+    width: auto;
+  }
 }
 
 @media (min-width: 425px) {
   .bigPic {
     width: 425px;
-    height: 280px;
-    margin-top: -40px;
+    height: auto;
+    margin-top: -60px;
   }
-
   div.dreieck {
     border-left: 301px solid #67bb7d8a;
   }
-
+  .img-logo {
+    height: auto;
+    width: auto;
+  }
 }
 
 @media (min-width: 768px) {
   .bigPic {
     width: 768px;
-    height: 400px;
-    margin-top: -40px;
+    height: auto;
+    margin-top: -60px;
   }
-
   div.dreieck {
     border-left: 644px solid #67bb7d8a;
   }
-
+  .img-logo {
+    height: auto;
+    width: auto;
+  }
 }
 
 @media (min-width: 992px) {
   .bigPic {
-    width: 768px;
-    height: 400px;
-    margin-top: -40px;
+    width: 992px;
+    height: auto;
+    margin-top: -100px;
   }
-
   div.dreieck {
     border-left: 868px solid #67bb7d8a;
+  }
+  .img-logo {
+    height: 200px;
+    width: 210px;
   }
 
 }
@@ -369,20 +378,17 @@ div.dreieck {
     height: 550px;
     margin-top: -40px;
   }
-
   div.dreieck {
     border-left: 1076px solid #67bb7d8a;
   }
-
 }
 
 @media (min-width: 1400px) {
   .bigPic {
     width: 1400px;
-    height: 600px;
-    margin-top: -40px;
+    height: auto;
+    margin-top: -125px;
   }
-
   div.dreieck {
     border-left: 1276px solid #67bb7d8a;
   }
