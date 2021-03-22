@@ -105,7 +105,6 @@ export default defineComponent({
   margin-top: -80px;
 }
 
-
 @media (min-width: 320px)  {
   .bigPic{
     width: 320px;

@@ -95,7 +95,7 @@
       <div class="accordion-item" @click="toggleContent(0)">
         <h2 class="accordion-header">
           <button class="accordion-button" :class="collapsed[0]" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="{{expanded}}" aria-controls="collapseOne">
-            1.Erderhitzung stoppen
+            <strong>1.Erderhitzung stoppen</strong>
           </button>
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse" :class="isShow[0]" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -107,7 +107,7 @@
       <div class="accordion-item" @click="toggleContent(1)">
         <h2 class="accordion-header">
           <button class="accordion-button" :class="collapsed[1]" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="{{expanded}}" aria-controls="collapseTwo">
-            2. Pariser Klimaschutzabkommen einhalten
+            <strong>2. Pariser Klimaschutzabkommen einhalten</strong>
           </button>
         </h2>
         <div id="collapseTwo" class="accordion-collapse collapse" :class="isShow[1]" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -121,7 +121,7 @@
       <div class="accordion-item" @click="toggleContent(2)">
         <h2 class="accordion-header">
           <button class="accordion-button" :class="collapsed[2]" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="{{expanded}}" aria-controls="collapseTwo">
-            3.Kräfte bündeln
+            <strong>3.Kräfte bündeln</strong>
           </button>
         </h2>
         <div class="accordion-collapse collapse" :class="isShow[2]" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -134,7 +134,7 @@
       <div class="accordion-item" @click="toggleContent(3)">
         <h2 class="accordion-header">
           <button class="accordion-button" :class="collapsed[3]" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="{{expanded}}" aria-controls="collapseTwo">
-            4.Lücken schließen
+            <strong>4.Lücken schließen</strong>
           </button>
         </h2>
         <div class="accordion-collapse collapse" :class="isShow[3]" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -147,7 +147,7 @@
       <div class="accordion-item" @click="toggleContent(4)">
         <h2 class="accordion-header">
           <button class="accordion-button" :class="collapsed[4]" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="{{expanded}}" aria-controls="collapseTwo">
-            5.Politik im Fokus
+            <strong>5.Politik im Fokus</strong>
           </button>
         </h2>
         <div class="accordion-collapse collapse" :class="isShow[4]" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -160,7 +160,7 @@
       <div class="accordion-item" @click="toggleContent(5)">
         <h2 class="accordion-header">
           <button class="accordion-button" :class="collapsed[5]" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="{{expanded}}" aria-controls="collapseTwo">
-            6.Kernforderungen erfüllen
+            <strong>6.Kernforderungen erfüllen</strong>
           </button>
         </h2>
         <div class="accordion-collapse collapse" :class="isShow[5]" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -173,7 +173,7 @@
       <div class="accordion-item" @click="toggleContent(6)">
         <h2 class="accordion-header" id="headingTwo">
           <button class="accordion-button" :class="collapsed[6]" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="{{expanded}}" aria-controls="collapseTwo">
-            7.Wissenschaft und Fakten
+            <strong>7.Wissenschaft und Fakten</strong>
           </button>
         </h2>
         <div class="accordion-collapse collapse" :class="isShow[6]" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -293,7 +293,6 @@ export default defineComponent({
   margin-left: 10%;
 }
 
-
 .infoDiv {
   margin-top: 90px;
 }
@@ -334,6 +333,10 @@ export default defineComponent({
   width: 700px;
 }
 
+.accordion-button:not(.collapsed) {
+  color: #67bb7d;
+  background-color: #67bb7d52;
+}
 
 @media (min-width: 320px) {
   .bigPic {
@@ -360,8 +363,8 @@ export default defineComponent({
 @media (min-width: 768px) {
   .bigPic {
     width: 768px;
-    height: 400px;
-    margin-top: -40px;
+    height: auto;
+    margin-top: -100px;
   }
   .list-group{
     margin-top: 10%;
@@ -370,17 +373,17 @@ export default defineComponent({
 
 @media (min-width: 992px) {
   .bigPic {
-    width: 768px;
-    height: 400px;
-    margin-top: -40px;
+    width: 992px;
+    height: auto;
+    margin-top: -200px;
   }
 }
 
 @media (min-width: 1200px) {
   .bigPic {
     width: 1200px;
-    height: 600px;
-    margin-top: -40px;
+    height: auto;
+    margin-top: -200px;
   }
 }
 
@@ -388,7 +391,7 @@ export default defineComponent({
   .bigPic {
     width: 1400px;
     height: 700px;
-    margin-top: -40px;
+    margin-top: -100px;
   }
 }
 
