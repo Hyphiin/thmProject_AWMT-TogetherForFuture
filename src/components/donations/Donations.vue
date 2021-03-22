@@ -106,7 +106,7 @@
       <div class="row">
         <p>
           <b>Transparenz</b> ist uns wichtig. Deshalb haben wir uns der Initiative Transparente Zivilgesellschaft angeschlossen.
-          Wir verpflichten uns diese <a href="#"  @click="updateStatus('Transparenz')">zehn</a> Informationen der Öffentlichkeit zur Verfügung zu stellen und aktuell <!-- TODO: Link zur Transparenz Seite -->
+          Wir verpflichten uns diese <a href="#/Transparenz"  @click="updateStatus('Transparenz')">zehn</a> Informationen der Öffentlichkeit zur Verfügung zu stellen und aktuell <!-- TODO: Link zur Transparenz Seite -->
           zu halten.
         </p>
         <img src="../../assets/images/csm_Transparente_ZivilgesellschaftPNG_c0c522c331.png" alt="Transparenz" class="zertifikat-img">

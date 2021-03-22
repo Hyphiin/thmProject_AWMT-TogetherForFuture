@@ -10,11 +10,11 @@
       </button>
       <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
         <div class="navbar-nav offset-md-5">
-          <a class="nav-link text-white h5" href="#" @click="updateStatus('Goals')">Unsere Ziele</a>
-          <a class="nav-link text-white h5" href="#" @click="updateStatus('Projects')">Projekte & Kooperationen</a>
-          <a class="nav-link text-white h5" href="#" @click="updateStatus('Team')">Das Team</a>
-          <a class="nav-link text-white h5" href="#" @click="updateStatus('Facts')">Klimafakten</a>
-          <a class="nav-link text-white h5" href="#" @click="updateStatus('Donation')">Spenden</a>
+          <a class="nav-link text-white h5" href="#/Ziele" @click="updateStatus('Goals')">Unsere Ziele</a>
+          <a class="nav-link text-white h5" href="#/Projekte" @click="updateStatus('Projects')">Projekte & Kooperationen</a>
+          <a class="nav-link text-white h5" href="#/Team" @click="updateStatus('Team')">Das Team</a>
+          <a class="nav-link text-white h5" href="#/Fakten" @click="updateStatus('Facts')">Klimafakten</a>
+          <a class="nav-link text-white h5" href="#/Spenden" @click="updateStatus('Donation')">Spenden</a>
         </div>
       </div>
     </div>

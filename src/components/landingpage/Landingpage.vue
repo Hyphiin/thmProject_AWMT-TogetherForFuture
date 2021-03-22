@@ -48,7 +48,7 @@
         <div class="card-body">
           <h5 class="card-title fw-bold">Klima oder doch Wetter?</h5>
           <p class="card-text">Alles was du über die Klimakrise wissen musst!</p>
-          <button @click="startDonation" class="btn btn-primary" style="background-color: #67bb7d">Spenden</button>
+          <a href="#/Spenden" @click="startDonation" class="btn btn-primary" style="background-color: #67bb7d">Spenden</a>
         </div>
       </div>
     </div>
