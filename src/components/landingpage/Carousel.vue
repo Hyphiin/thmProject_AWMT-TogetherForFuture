@@ -5,6 +5,7 @@
           <div class="container d-flex justify-content-center p-4 infoContainer border">
             <div class="row d-flex justify-content-center pe-auto">
               <div @click="updateStatus('Bot')" >
+                <p>Nächste Demo in deiner Nähe:</p>
                 <strong class="pointerDiv"> {{ content[counter].city + content[counter].place }} </strong>
                 <br>
                 <a v-if="content[counter].link !== ''" :href="content[counter].link"> Mehr Informationen </a>
