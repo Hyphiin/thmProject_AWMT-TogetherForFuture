@@ -68,7 +68,7 @@
           </ul>
         </div>
         <!--Text rechts-->
-        <div class="col">
+        <div v-if="selectedComponent==='start' " class="col">
           <ul class="list-unstyled">
             <div class="col p-5">
               <h5>
@@ -86,21 +86,187 @@
                 Wählen sie einen Spendenrhythmus:
               </p>
               <div class="btn-group" role="group">
-                <button type="button" class="btn btn-secondary">Einmalig</button>
-                <button type="button" class="btn btn-secondary">Wiederkehrend</button>
+                <button type="button" class="btn btn-secondary" @click="repeat = 'Einmalig'">Einmalig</button>
+                <button type="button" class="btn btn-secondary" @click="repeat = 'Wiederkehrend'">Wiederkehrend</button>
               </div>
               <br> <br>
               <p class="spenden-text">
                 Ihr Spendenzweck:
               </p>
               <div class="btn-group" role="group">
-                <button type="button" class="btn btn-secondary">Tiere</button>
-                <button type="button" class="btn btn-secondary">Wald</button>
-                <button type="button" class="btn btn-secondary">Demos</button>
+                <button type="button" class="btn btn-secondary" @click="purpose = 'Tiere'">Tiere</button>
+                <button type="button" class="btn btn-secondary" @click="purpose = 'Wald'">Wald</button>
+                <button type="button" class="btn btn-secondary" @click="purpose = 'Demos'">Demos</button>
               </div>
               <br> <br>
-              <button type="button" class="btn btn-secondary">JETZT SPENDEN</button>
+              <button type="button" class="btn btn-secondary" @click="updateComponent('donate')">JETZT SPENDEN</button>
               <br> <br>
+              <p> Ein Service der
+                <a href="https://www.gls.de/gemeinnuetzige-kunden/zahlungsverkehr/gls-espende/">
+                  <img src="../../assets/images/logos/gls-bank-logo-blog.png" alt="GLS Bank" class="zertifikat-img">
+                  <br>
+                  Datenschutz
+                </a>
+              </p>
+              <br>
+              <div class="dreieck2"></div>
+              <p>
+                Noch unsicher wegen der Spende?
+                <br>
+                Sie können ihre Spende noch bis zu zwei Wochen lang zurückziehen!
+              </p>
+            </div>
+          </ul>
+        </div>
+
+        <div v-if="selectedComponent==='donate' " class="col">
+          <button @click="updateComponent('start')" type="button" class="btn btn-secondary">Zurück</button>
+          <ul class="list-unstyled">
+            <div class="col p-5">
+              <h5>
+                {{ donSum }}€ für {{ purpose }}
+              </h5>
+              <h3>
+                {{ repeat }}
+              </h3>
+              <br>
+              <p class="spenden-text">
+                Bitte Zahlungsart wählen
+              </p>
+              <button @click="updateComponent('sepa')" type="button" class="btn btn-secondary">SEPA Lastschrift</button>
+              <button @click="updateComponent('paypal')" type="button" class="btn btn-secondary">Paypal</button>
+              <button @click="updateComponent('überweisung')" type="button" class="btn btn-secondary">Überweisung
+              </button>
+              <br> <br>
+              <p> Ein Service der
+                <a href="https://www.gls.de/gemeinnuetzige-kunden/zahlungsverkehr/gls-espende/">
+                  <img src="../../assets/images/logos/gls-bank-logo-blog.png" alt="GLS Bank" class="zertifikat-img">
+                  <br>
+                  Datenschutz
+                </a>
+              </p>
+              <br>
+              <div class="dreieck2"></div>
+              <p>
+                Noch unsicher wegen der Spende?
+                <br>
+                Sie können ihre Spende noch bis zu zwei Wochen lang zurückziehen!
+              </p>
+            </div>
+          </ul>
+        </div>
+
+        <div v-if="selectedComponent==='sepa' " class="col">
+          <button @click="updateComponent('donate')" type="button" class="btn btn-secondary">Zurück</button>
+          <ul class="list-unstyled">
+            <div class="col p-5">
+              <div class="card formular">
+                <div class="card-body">
+                  <form class="contact-form" @submit.prevent="sendDonation">
+                    <div class="form-group">
+                      <input v-model="deposit_owner" name="deposit_owner" type="text" class="form-control" id="deposit_owner"
+                             aria-describedby="deposit_owner_help" placeholder="Kontoinhaber/-in Vor- und Nachname" required>
+                    </div>
+                    <div class="form-group">
+                      <input v-model="owner_email" name="owner_mail" type="email" class="form-control" id="owner_mail"
+                             aria-describedby="owner_mail_help" placeholder="E-Mail-Adresse" required>
+                    </div>
+                    <div class="form-group">
+                      <input v-model="owner_iban" name="owner_iban" type="text" class="form-control" id="owner_iban"
+                             aria-describedby="owner_iban_help" placeholder="IBAN" required>
+                    </div>
+                    <div class="form-group">
+                      <input v-model="owner_bic" name="owner_bic" type="text" class="form-control" id="owner_bic"
+                             aria-describedby="owner_bic_help" placeholder="BIC" required>
+                    </div>
+                    <div class="form-group">
+                      <input v-model="accepted" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Ich akzeptiere die Bedingungen für den <a href="">SEPA-Lastschrifteinzug.</a>
+                      </label>
+                    </div>
+                    <button type="submit" value="Abschicken" class="btn btn-secondary"> {{donSum}}€ für {{purpose}} Spenden</button>
+                  </form>
+                </div>
+              </div>
+              <p> Ein Service der
+                <a href="https://www.gls.de/gemeinnuetzige-kunden/zahlungsverkehr/gls-espende/">
+                  <img src="../../assets/images/logos/gls-bank-logo-blog.png" alt="GLS Bank" class="zertifikat-img">
+                  <br>
+                  Datenschutz
+                </a>
+              </p>
+              <br>
+              <div class="dreieck2"></div>
+              <p>
+                Noch unsicher wegen der Spende?
+                <br>
+                Sie können ihre Spende noch bis zu zwei Wochen lang zurückziehen!
+              </p>
+            </div>
+          </ul>
+        </div>
+
+        <div v-if="selectedComponent==='paypal' " class="col">
+          <button @click="updateComponent('donate')" type="button" class="btn btn-secondary">Zurück</button>
+          <ul class="list-unstyled">
+            <div class="col p-5">
+              <h5>
+                Bitte E-Mail-Adresse für die Bestätigung eingeben
+              </h5>
+              <div class="card formular">
+                <div class="card-body">
+                  <form class="contact-form" @submit.prevent="sendDonation">
+                    <div class="form-group">
+                      <input v-model="owner_email" name="owner_email" type="text" class="form-control" id="owner_email2"
+                             aria-describedby="owner_email" placeholder="Email-Adresse" required>
+                    </div>
+                    <p class="spenden-text">
+                      Für die Zahlung erfolgt im nächsten Schritt die Weiterleitung zu PayPal. Alle Daten werden verschlüsselt übermittelt.
+                    </p>
+                    <button type="submit" value="Abschicken" class="btn btn-secondary"> {{donSum}}€ für {{purpose}} Spenden</button>
+                  </form>
+                </div>
+              </div>
+              <p> Ein Service der
+                <a href="https://www.gls.de/gemeinnuetzige-kunden/zahlungsverkehr/gls-espende/">
+                  <img src="../../assets/images/logos/gls-bank-logo-blog.png" alt="GLS Bank" class="zertifikat-img">
+                  <br>
+                  Datenschutz
+                </a>
+              </p>
+              <br>
+              <div class="dreieck2"></div>
+              <p>
+                Noch unsicher wegen der Spende?
+                <br>
+                Sie können ihre Spende noch bis zu zwei Wochen lang zurückziehen!
+              </p>
+            </div>
+          </ul>
+        </div>
+
+        <div v-if="selectedComponent==='überweisung' " class="col">
+          <button @click="updateComponent('donate')" type="button" class="btn btn-secondary">Zurück</button>
+          <ul class="list-unstyled">
+            <div class="col p-5">
+              <h5>
+                Bitte E-Mail-Adresse für die Bestätigung eingeben
+              </h5>
+              <div class="card formular">
+                <div class="card-body">
+                  <form class="contact-form" @submit.prevent="sendDonation">
+                    <div class="form-group">
+                      <input v-model="owner_email" name="owner_email" type="text" class="form-control" id="owner_email3"
+                             aria-describedby="owner_email" placeholder="Email-Adresse" required>
+                    </div>
+                    <p class="spenden-text">
+                      Alle Daten für die Überweisung senden wir per E-Mail zu.
+                    </p>
+                    <button type="submit" value="Abschicken" class="btn btn-secondary"> {{donSum}}€ für {{purpose}} Spenden</button>
+                  </form>
+                </div>
+              </div>
               <p> Ein Service der
                 <a href="https://www.gls.de/gemeinnuetzige-kunden/zahlungsverkehr/gls-espende/">
                   <img src="../../assets/images/logos/gls-bank-logo-blog.png" alt="GLS Bank" class="zertifikat-img">
@@ -124,13 +290,13 @@
 
     <div class="container d-flex justify-content-center p-4 infoContainer border">
       <div class="row d-flex justify-content-center">
-      <p>
-        <b>Transparenz</b> ist uns wichtig. Deshalb haben wir uns der Initiative Transparente Zivilgesellschaft
-        angeschlossen.
-        Wir verpflichten uns diese <a href="#" @click="updateStatus('Transparenz')">zehn</a> Informationen der
-        Öffentlichkeit zur Verfügung zu stellen und aktuell <!-- TODO: Link zur Transparenz Seite -->
-        zu halten.
-      </p>
+        <p>
+          <b>Transparenz</b> ist uns wichtig. Deshalb haben wir uns der Initiative Transparente Zivilgesellschaft
+          angeschlossen.
+          Wir verpflichten uns diese <a href="#" @click="updateStatus('Transparenz')">zehn</a> Informationen der
+          Öffentlichkeit zur Verfügung zu stellen und aktuell <!-- TODO: Link zur Transparenz Seite -->
+          zu halten.
+        </p>
       </div>
     </div>
 
@@ -155,15 +321,53 @@ export default defineComponent({
     const status = ref<string>("Donation");
     const donSum = ref<number>(0);
 
+    const repeat = ref<string>("");
+    const purpose = ref<string>("");
+
+    const deposit_owner = ref<string>("");
+    const owner_email = ref<string>("");
+    const owner_iban = ref<string>("");
+    const owner_bic = ref<string>("");
+
+    const accepted = ref<boolean>(false);
+
+    const selectedComponent = ref<string>("start");
+
     const updateStatus = (label: string) => {
       status.value = label;
       context.emit('updateStatus', status.value);
       return status.value;
     };
+
+    const updateComponent = (value: string) => {
+      selectedComponent.value = value;
+      console.log(selectedComponent.value);
+      return selectedComponent.value
+    }
+
+    const sendDonation = () => {
+      if(accepted.value === true){
+        alert("Spenden erfolgreich!");
+      }else{
+        alert("Akzeptiere bitte die Bedingungen!");
+      }
+
+    }
+
     return {
       status,
       donSum,
-      updateStatus
+      repeat,
+      purpose,
+      deposit_owner,
+      owner_email,
+      owner_iban,
+      owner_bic,
+      accepted,
+      selectedComponent,
+      updateStatus,
+      updateComponent,
+      sendDonation
     }
   }
 });
@@ -188,7 +392,7 @@ export default defineComponent({
 .infoContainer {
   box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  margin-top:90px;
+  margin-top: 90px;
 }
 
 .project-row1 {
@@ -242,6 +446,7 @@ div.dreieck2 {
     height: 230px;
     margin-top: -80px;
   }
+
   div.dreieck {
     border-left: 296px solid #67bb7d8a;
     border-right: 0 solid transparent;
@@ -254,6 +459,7 @@ div.dreieck2 {
     height: 240px;
     margin-top: -80px;
   }
+
   div.dreieck {
     border-left: 401px solid #67bb7d8a;
     border-right: 0 solid transparent;
@@ -266,6 +472,7 @@ div.dreieck2 {
     height: 400px;
     margin-top: -80px;
   }
+
   div.dreieck {
     border-left: 644px solid #67bb7d8a;
     border-right: 100px solid transparent;
@@ -278,6 +485,7 @@ div.dreieck2 {
     height: 450px;
     margin-top: -80px;
   }
+
   div.dreieck {
     border-left: 868px solid #67bb7d8a;
   }
@@ -289,6 +497,7 @@ div.dreieck2 {
     height: 550px;
     margin-top: -80px;
   }
+
   div.dreieck {
     border-left: 1076px solid #67bb7d8a;
   }
@@ -300,6 +509,7 @@ div.dreieck2 {
     height: 600px;
     margin-top: -80px;
   }
+
   div.dreieck {
     border-left: 1276px solid #67bb7d8a;
   }
