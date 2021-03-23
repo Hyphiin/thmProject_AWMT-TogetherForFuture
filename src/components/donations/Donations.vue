@@ -48,7 +48,7 @@
                           <b>Money Boy:</b>
                           <br>
                           <br>
-                          Diese Spende bringt mehr als jede Insta Story, yo!
+                          "Diese Spende bringt mehr als jede Insta Story, yo!"
                         </p>
                       </div>
                     </div>
@@ -60,7 +60,7 @@
                           <b>Prof. Dr. Klima:</b>
                           <br>
                           <br>
-                          Alleine 10 Euro führen zu 1 Gigatonne weniger CO2!
+                          "Alleine 10 Euro führen zu 1 Gigatonne weniger CO2!"
                         </p>
                       </div>
                       <div class="col">

@@ -1,10 +1,10 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container-fluid half-height">
-      <a class="navbar-brand col-md-2" href="#" @click="updateStatus('Home')">
+      <a class="navbar-brand col-md-2" :class="logoMove" href="#" @click="updateStatus('Home')">
         <img src="../assets/images/logos/TogetherForFuture_Logo.png" class="d-inline-block align-top" alt="Logo"/>
       </a>
-      <button class="navbar-toggler mb-5" type="button" @click="togglerClicked()" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      <button class="navbar-toggler mb-5" :class="togglerMove" type="button" @click="togglerClicked()" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
               aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -43,6 +43,8 @@ export default defineComponent({
 
     const status = ref<string>("Home");
     const collapse = ref<string>('collapse');
+    const logoMove = ref<string>('logoMove');
+    const togglerMove = ref<string>('togglerMove');
 
     const updateStatus = (label: string) => {
       status.value = label;
@@ -54,8 +56,12 @@ export default defineComponent({
       if (type.value === 'small'){
         if (collapse.value === 'backgroundStyle'){
           collapse.value = 'collapse';
+          logoMove.value = '';
+          togglerMove.value = '';
         }else {
           collapse.value = 'backgroundStyle';
+          logoMove.value = 'logoMove';
+          togglerMove.value = 'togglerMove';
         }
       }
     }
@@ -65,7 +71,9 @@ export default defineComponent({
       updateStatus,
       togglerClicked,
       collapse,
-      width
+      width,
+      logoMove,
+      togglerMove
     }
   }
 })
@@ -84,6 +92,10 @@ img {
 nav {
   background-color: #67bb7d;
 }
+.nav-link{
+  padding: 0;
+  padding-top: 10px;
+}
 
 .navbar-brand{
   z-index: 2;
@@ -93,14 +105,43 @@ nav {
   height: 50px;
 }
 
+.logoMove{
+  margin-left:17px;
+  position: absolute;
+  left: 8%!important;
+  bottom: -500%!important;
+}
+
+.togglerMove{
+  margin-left: 81%;
+  margin-top: 5px;
+}
+
 .backgroundStyle{
-  background-color: #387046;
-  margin-top: -25px;
+  background-color: #67bb7d;
+  width: auto;
+  height:auto;
+  margin-top: -35px;
+  opacity: 0.95;
+}
+.collapse{
+  background-color: #67bb7d;
+  width: auto;
+  height:auto;
 }
 
 @media (min-width: 320px){
   .backgroundStyle{
-    margin-top: 7px;
+    width: 320px;
+    height:260px;
+    margin-top: -40px;
+    padding-top: 30px;
+  }
+  .logoMove{
+    margin-left:0;
+    position: absolute;
+    left: 0!important;
+    bottom: -30%!important;
   }
   .navbar{
     width:320px
@@ -108,18 +149,46 @@ nav {
 }
 
 @media (min-width: 425px){
-  .backgroundStyle{
-    margin-top: 7px;
-  }
   .navbar{
     width:auto;
   }
+  .logoMove{
+    margin-left:0;
+    position: absolute;
+    left: 0!important;
+    bottom: -30%!important;
+  }
+
+  .togglerMove{
+    margin-left: 86%;
+    margin-top: 5px;
+  }
+
+  .backgroundStyle{
+    width: 425px;
+    height:250px;
+    margin-top: -40px;
+    padding-top: 35px;
+  }
 }
 @media (min-width: 768px){
+  .logoMove{
+    margin-left:0;
+    position: absolute;
+    left: 2.5%!important;
+    bottom: -70%!important;
+  }
+
+  .togglerMove{
+    margin-left: 92.5%;
+    margin-top: 4px;
+  }
+
   .backgroundStyle{
-    margin-top: -25px;
-    margin-left: 60%;
-    padding-right: 10%;
+    width: 768px;
+    height:230px;
+    margin-top: -40px;
+    padding-top: 0;
   }
 
 }

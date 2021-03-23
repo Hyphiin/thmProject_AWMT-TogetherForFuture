@@ -111,7 +111,7 @@ export default defineComponent({
   padding: 30px;
   color: #303030;
   opacity: 0.8;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 .eisbärPic{
   height: 650px;
@@ -180,7 +180,7 @@ export default defineComponent({
     width: 50%;
     height: 24%;
     padding: 5px;
-    margin-top: 10%;
+    margin-top: 8%;
   }
 }
 
@@ -198,6 +198,7 @@ export default defineComponent({
     width: 40%;
     height: 24%;
     padding: 5px;
+    margin-top: 6%;
   }
 }
 
@@ -216,6 +217,7 @@ export default defineComponent({
     height: 22%;
     padding-top: 15px;
     padding-bottom: 10px;
+    margin-top: 6%;
   }
 }
 
@@ -224,13 +226,6 @@ export default defineComponent({
     width: 1400px;
     height: 600px;
     margin-top: -80px;
-  }
-  .eisbärContainer{
-    width: 25%;
-    height: 25%;
-    padding: 30px;
-    margin-left: 38%;
-    margin-top: 10%;
   }
   .eisbärPic{
     height: 650px;
@@ -241,6 +236,7 @@ export default defineComponent({
     height: 19%;
     padding-top: 15px;
     padding-bottom: 10px;
+    margin-top: 6%;
   }
 }
 
