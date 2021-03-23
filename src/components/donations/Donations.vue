@@ -14,7 +14,7 @@
     </div>
 
     <!--Text Card-->
-    <div class="container infoContainer border">
+    <div class="container infoContainer border flex-column">
       <div class="row justify-content-between">
         <!-- Text links-->
         <div class="col p-5">
@@ -74,7 +74,8 @@
           </ul>
         </div>
         <!--Text rechts-->
-        <div v-if="selectedComponent==='start' " class="col">
+
+        <div v-if="selectedComponent==='start' " class="container justify-content-center infoContainerRight border col">
           <ul class="list-unstyled">
             <div class="col p-5">
               <h5 class="light-bg text-white">
@@ -108,7 +109,7 @@
               <button type="button" class="btn btn-secondary" @click="updateComponent('donate')">JETZT SPENDEN</button>
               <br> <br>
               <p> Ein Service der
-                <a href="https://www.gls.de/gemeinnuetzige-kunden/zahlungsverkehr/gls-espende/">
+                <a href="https://www.gls.de/gemeinnuetzige-kunden/zahlungsverkehr/gls-espende/" class="linktext">
                   <img src="../../assets/images/logos/gls-bank-logo-blog.png" alt="GLS Bank" class="zertifikat-img">
                   <br>
                   Datenschutz
@@ -125,7 +126,7 @@
           </ul>
         </div>
 
-        <div v-if="selectedComponent==='donate' " class="col mt-5">
+        <div v-if="selectedComponent==='donate' " class="container justify-content-center infoContainerRight border  mt-5 col">
           <button @click="updateComponent('start')" type="button" class="btn btn-secondary btn-success btn-back">Zurück</button>
           <ul class="list-unstyled">
             <div class="col p-5">
@@ -145,7 +146,7 @@
               </button>
               <br> <br>
               <p> Ein Service der
-                <a href="https://www.gls.de/gemeinnuetzige-kunden/zahlungsverkehr/gls-espende/">
+                <a href="https://www.gls.de/gemeinnuetzige-kunden/zahlungsverkehr/gls-espende/" class="linktext">
                   <img src="../../assets/images/logos/gls-bank-logo-blog.png" alt="GLS Bank" class="zertifikat-img">
                   <br>
                   Datenschutz
@@ -162,7 +163,7 @@
           </ul>
         </div>
 
-        <div v-if="selectedComponent==='sepa' " class="col mt-5">
+        <div v-if="selectedComponent==='sepa' " class="container justify-content-center infoContainerRight border  mt-5 col">
           <button @click="updateComponent('donate')" type="button" class="btn btn-secondary btn-success btn-back">Zurück</button>
           <ul class="list-unstyled">
             <div class="col p-5">
@@ -200,7 +201,7 @@
                 </div>
               </div>
               <p> Ein Service der
-                <a href="https://www.gls.de/gemeinnuetzige-kunden/zahlungsverkehr/gls-espende/">
+                <a href="https://www.gls.de/gemeinnuetzige-kunden/zahlungsverkehr/gls-espende/" class="linktext">
                   <img src="../../assets/images/logos/gls-bank-logo-blog.png" alt="GLS Bank" class="zertifikat-img">
                   <br>
                   Datenschutz
@@ -217,7 +218,7 @@
           </ul>
         </div>
 
-        <div v-if="selectedComponent==='paypal' " class="col mt-5">
+        <div v-if="selectedComponent==='paypal' " class="container justify-content-center infoContainerRight border  mt-5 col">
           <button @click="updateComponent('donate')" type="button" class="btn btn-secondary btn-success btn-back">Zurück</button>
           <ul class="list-unstyled">
             <div class="col p-5">
@@ -242,7 +243,7 @@
                 </div>
               </div>
               <p> Ein Service der
-                <a href="https://www.gls.de/gemeinnuetzige-kunden/zahlungsverkehr/gls-espende/">
+                <a href="https://www.gls.de/gemeinnuetzige-kunden/zahlungsverkehr/gls-espende/" class="linktext">
                   <img src="../../assets/images/logos/gls-bank-logo-blog.png" alt="GLS Bank" class="zertifikat-img">
                   <br>
                   Datenschutz
@@ -259,7 +260,7 @@
           </ul>
         </div>
 
-        <div v-if="selectedComponent==='überweisung' " class="col mt-5">
+        <div v-if="selectedComponent==='überweisung' " class="container justify-content-center infoContainerRight border  mt-5 col">
           <button @click="updateComponent('donate')" type="button" class="btn btn-secondary btn-success btn-back">Zurück</button>
           <ul class="list-unstyled">
             <div class="col p-5">
@@ -283,7 +284,7 @@
                 </div>
               </div>
               <p> Ein Service der
-                <a href="https://www.gls.de/gemeinnuetzige-kunden/zahlungsverkehr/gls-espende/">
+                <a href="https://www.gls.de/gemeinnuetzige-kunden/zahlungsverkehr/gls-espende/" class="linktext">
                   <img src="../../assets/images/logos/gls-bank-logo-blog.png" alt="GLS Bank" class="zertifikat-img">
                   <br>
                   Datenschutz
@@ -308,7 +309,7 @@
         <p>
           <b>Transparenz</b> ist uns wichtig. Deshalb haben wir uns der Initiative Transparente Zivilgesellschaft
           angeschlossen.
-          Wir verpflichten uns diese <a href="#" @click="updateStatus('Transparenz')">zehn</a> Informationen der
+          Wir verpflichten uns diese <a href="#" @click="updateStatus('Transparenz')" class="linktext">zehn</a> Informationen der
           Öffentlichkeit zur Verfügung zu stellen und aktuell
           zu halten.
         </p>
@@ -318,7 +319,7 @@
     <div class="row project-row1 ">
       <div class="dreieck"></div>
       <div class="description-text pt-2 pb-3">
-        <a href="#">
+        <a href="#" class="linktext">
           <img src="../../assets/images/csm_Transparente_ZivilgesellschaftPNG_c0c522c331.png" class="img-fluid"
                alt="Transparenz"/>
         </a>
@@ -434,6 +435,13 @@ export default defineComponent({
   border-radius: 20px;
   margin-top: 90px;
 }
+.infoContainerRight {
+  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin: 20px;
+  height: 750px;
+}
+
 
 .infoContainer2 {
   box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.25);
@@ -487,6 +495,11 @@ div.dreieck2 {
   width: 1400px;
   height: 700px;
   margin-top: -120px;
+}
+
+.linktext {
+  color: #67bb7d;
+  text-decoration: none;
 }
 
 @media (min-width: 320px) {

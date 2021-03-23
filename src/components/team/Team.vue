@@ -89,7 +89,7 @@
         <div class="col description-text align-l">
           <h4> Strategie & Kommunikation: </h4>
           <p>
-            <a href="https://catho.de/">Chris Schaumann (Extern)</a>
+            <a href="https://catho.de/" class="linktext">Chris Schaumann (Extern)</a>
           </p>
         </div>
         <div class="col description-pic text-center">
@@ -113,6 +113,11 @@ export default defineComponent({
 
   .team-container{
     margin-top:50px;
+  }
+
+  .linktext {
+    color: #67bb7d;
+    text-decoration: none;
   }
 
   .Banner {

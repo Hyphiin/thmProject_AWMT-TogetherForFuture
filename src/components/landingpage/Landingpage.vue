@@ -41,20 +41,20 @@
       </div>
     </div>
 
-    <!--Eisbärding-->
-    <div class="container d-flex justify-content-center mt-5">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="../../assets/images/Icebear.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title fw-bold">Klima oder doch Wetter?</h5>
-          <p class="card-text">Alles was du über die Klimakrise wissen musst!</p>
-          <a href="#/Spenden" @click="startDonation" class="btn btn-primary" style="background-color: #67bb7d">Spenden</a>
-        </div>
+    <div class="card">
+      <div class="container">
+      <img src="../../assets/images/Icebear.jpg" class="eisbärPic" alt="...">
+      </div>
+      <div class="card-img-overlay eisbärContainer container">
+        <h5 class="card-title"><strong>Klima oder doch Wetter?</strong></h5>
+        <p class="card-text">Alles was du über die Klimakrise wissen musst!</p>
+        <a href="#/Spenden" @click="startDonation" class="btn text-white btnEisbär" style="background-color: #67bb7d">Spenden</a>
       </div>
     </div>
+
     <div>
       <p>
-        Socials
+       <!-- Socials -->
       </p>
     </div>
   </div>
@@ -104,6 +104,25 @@ export default defineComponent({
   height: 650px;
   margin-top: -80px;
 }
+.eisbärContainer{
+  background-color: #F5F5F5;
+  width: 25%;
+  height: 25%;
+  padding: 30px;
+  color: #303030;
+  opacity: 0.8;
+  margin-top: 10%;
+}
+.eisbärPic{
+  height: 650px;
+  width: 1200px;
+  margin-top: 15px;
+}
+
+.card{
+  border: 0;
+}
+
 
 @media (min-width: 320px)  {
   .bigPic{
@@ -111,12 +130,39 @@ export default defineComponent({
     height: 230px;
     margin-top: -80px;
   }
+  .eisbärPic{
+    height: auto;
+    width: 295px;
+  }
+  .eisbärContainer {
+    width: 98%;
+    height: 60%;
+    padding: 3px;
+    margin-top: 50px;
+  }
+  .card-text{
+    margin-bottom: 2px;
+  }
+
 }
 @media (min-width: 425px)  {
   .bigPic{
     width: 425px;
     height: 240px;
     margin-top: -80px;
+  }
+  .eisbärPic{
+    height: auto;
+    width: 400px;
+  }
+  .eisbärContainer {
+    width: 90%;
+    height: 36%;
+    padding: 3px;
+    margin-top: 20px;
+  }
+  .card-text{
+    margin-bottom: 2px;
   }
 }
 
@@ -126,6 +172,16 @@ export default defineComponent({
     height: 400px;
     margin-top: -80px;
   }
+  .eisbärPic{
+    height: 430px;
+    width: 700px;
+  }
+  .eisbärContainer {
+    width: 50%;
+    height: 24%;
+    padding: 5px;
+    margin-top: 10%;
+  }
 }
 
 @media (min-width: 992px) {
@@ -133,6 +189,15 @@ export default defineComponent({
     width: 992px;
     height: 450px;
     margin-top: -80px;
+  }
+  .eisbärPic{
+    height: 450px;
+    width: 850px;
+  }
+  .eisbärContainer {
+    width: 40%;
+    height: 24%;
+    padding: 5px;
   }
 }
 
@@ -142,6 +207,16 @@ export default defineComponent({
     height: 550px;
     margin-top: -80px;
   }
+  .eisbärPic{
+    height: 550px;
+    width: 1000px;
+  }
+  .eisbärContainer {
+    width: 30%;
+    height: 22%;
+    padding-top: 15px;
+    padding-bottom: 10px;
+  }
 }
 
 @media (min-width: 1400px)  {
@@ -149,6 +224,23 @@ export default defineComponent({
     width: 1400px;
     height: 600px;
     margin-top: -80px;
+  }
+  .eisbärContainer{
+    width: 25%;
+    height: 25%;
+    padding: 30px;
+    margin-left: 38%;
+    margin-top: 10%;
+  }
+  .eisbärPic{
+    height: 650px;
+    width: 1200px;
+  }
+  .eisbärContainer {
+    width: 30%;
+    height: 19%;
+    padding-top: 15px;
+    padding-bottom: 10px;
   }
 }
 
