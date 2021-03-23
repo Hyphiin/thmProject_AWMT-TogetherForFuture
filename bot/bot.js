@@ -18,8 +18,6 @@ function run(){
          //console.log(table)
          
         let results = []
-
-        
         
         for(var i= 0; i < cities.length; i++){
             let start = cities[i].innerHTML.search('</b>')+5;
@@ -29,8 +27,6 @@ function run(){
             if(cities[i].children.length > 1){
                 url = cities[i].children[1].getAttribute('href'); 
             }
-            
-            
         results.push( {
             index: i,
             city: cities[i].children[0].innerText,
