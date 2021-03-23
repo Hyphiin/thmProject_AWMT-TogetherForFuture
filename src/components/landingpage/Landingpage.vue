@@ -48,14 +48,9 @@
         <div class="card-body">
           <h5 class="card-title fw-bold">Klima oder doch Wetter?</h5>
           <p class="card-text">Alles was du über die Klimakrise wissen musst!</p>
-          <a href="#/Spenden" @click="startDonation" class="btn btn-primary" style="background-color: #67bb7d">Spenden</a>
+          <a href="#/Klimafakten" @click="startFacts" class="btn btn-primary" style="background-color: #67bb7d">Jetzt Lesen!</a>
         </div>
       </div>
-    </div>
-    <div>
-      <p>
-        Socials
-      </p>
     </div>
   </div>
 </template>
@@ -68,16 +63,16 @@ export default defineComponent({
   name: "Landingpage",
 
   setup(props, context){
-    const donate = ref<string>("Donation");
+    const facts = ref<string>("Facts");
 
-    const startDonation = () => {
-      context.emit('startDonation', donate.value);
-      return donate.value;
+    const startFacts = () => {
+      context.emit('startFacts', facts.value);
+      return facts.value;
     };
 
     return{
-      donate,
-      startDonation
+      facts,
+      startFacts
     }
   }
 })
@@ -93,6 +88,10 @@ export default defineComponent({
   border-radius: 49px;
 }
 
+.container{
+  margin-bottom: 25px;
+}
+
 .infoContainer {
   box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
@@ -103,6 +102,7 @@ export default defineComponent({
   width: 1400px;
   height: 650px;
   margin-top: -80px;
+  transform:scaleX(-1)
 }
 
 @media (min-width: 320px)  {

@@ -4,7 +4,7 @@
 
     <div v-if="siteComponent==='Home'">
       <Carousel @clickedCarousel="onClickCarousel('Bot')"></Carousel>
-      <Landingpage class="component"  @startDonation="onClickDonation"/>
+      <Landingpage class="component"  @startFacts="onClickFacts"/>
     </div>
 
     <div v-if="siteComponent==='Projects'">
@@ -109,7 +109,8 @@ export default defineComponent({
       footerComponent.value = value;
     }
 
-    const onClickDonation = (value: string) => {
+    const onClickFacts = (value: string) => {
+      console.log(value)
       siteComponent.value = value;
     }
 
@@ -133,7 +134,7 @@ export default defineComponent({
       changeStatus,
       footerComponent,
       onClickFooter,
-      onClickDonation,
+      onClickFacts,
       onClickContact,
       onClickCarousel
     }
