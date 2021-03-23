@@ -326,6 +326,7 @@ export default defineComponent({
   width: 1400px;
   height: 650px;
   margin-top: -40px;
+  filter: grayscale(100%);
 }
 
 .Banner {
