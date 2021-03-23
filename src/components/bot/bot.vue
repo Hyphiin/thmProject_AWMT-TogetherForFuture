@@ -3,6 +3,7 @@
   <div class="container searchContainer">
   <form class="d-flex">
     <input v-model="searchText" @input="searchTextChanged" class="form-control me-2" type="search" placeholder="Suche nach deiner Stadt..." aria-label="Search">
+    <p>Daten bezogen von: <a href="https://fridaysforfuture.de/allefuer1komma5/" class="linktext">Fridays For Future</a></p>
   </form>
   </div>
   <div class="container-md">
@@ -93,6 +94,11 @@ export default defineComponent({
   width: 50%;
   margin-top:120px;
   margin-bottom: 2%;
+}
+
+.linktext {
+  color: #67bb7d;
+  text-decoration: none;
 }
 
 @media (min-width: 320px)  {
