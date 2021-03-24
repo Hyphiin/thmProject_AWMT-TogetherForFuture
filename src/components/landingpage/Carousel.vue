@@ -38,12 +38,9 @@ export default defineComponent({
     const counter = ref<number>(0);
     const status = ref<string>("Home");
 
-    console.log(content[counter.value]);
-
     const nextItem = () => {
         if (counter.value < content.length-1) {
           counter.value++;
-          console.log(counter.value)
         }else{
           counter.value = 0;
         }
@@ -52,7 +49,6 @@ export default defineComponent({
     const prevItem = () => {
       if (counter.value > 0) {
         counter.value--;
-        console.log(counter.value)
       }else{
         counter.value = content.length;
       }

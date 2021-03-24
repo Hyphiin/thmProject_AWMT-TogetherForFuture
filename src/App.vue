@@ -110,7 +110,6 @@ export default defineComponent({
     }
 
     const onClickFacts = (value: string) => {
-      console.log(value)
       siteComponent.value = value;
     }
 

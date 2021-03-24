@@ -1,28 +1,30 @@
 <template>
 
   <div class="container searchContainer">
-  <form class="d-flex">
-    <input v-model="searchText" @input="searchTextChanged" class="form-control me-2" type="search" placeholder="Suche nach deiner Stadt..." aria-label="Search">
-    <p>Daten bezogen von: <a href="https://fridaysforfuture.de/allefuer1komma5/" class="linktext">Fridays For Future</a></p>
-  </form>
+    <div class="input-group mb-3">
+      <input v-model="searchText" @input="searchTextChanged" type="text" class="form-control" placeholder="Suche nach deiner Stadt..."
+             aria-label="Suche nach deiner Stadt..." aria-describedby="button-addon2">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Daten von: <a href="https://fridaysforfuture.de/allefuer1komma5/" class="linktext">Fridays For Future</a>
+      </button>
+    </div>
   </div>
   <div class="container-md">
-  <table class="table table-success table-striped table-hover" v-if="loading && Events.length > 0">
-    <thead>
-    <tr>
-      <th scope="col">Stadt</th>
-      <th scope="col">Wann & Wo</th>
-      <th scope="col">Link</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr v-for="city in Events" :key="city.city">
-      <th scope="row"> {{ city.city }}</th>
-      <td>{{ city.place }}</td>
-      <td><a v-if="city.link !== ''" :href="city.link"> Mehr Informationen </a></td>
-    </tr>
-    </tbody>
-  </table>
+    <table class="table table-success table-striped table-hover" v-if="loading && Events.length > 0">
+      <thead>
+      <tr>
+        <th scope="col">Stadt</th>
+        <th scope="col">Wann & Wo</th>
+        <th scope="col">Link</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="city in Events" :key="city.city">
+        <th scope="row"> {{ city.city }}</th>
+        <td>{{ city.place }}</td>
+        <td><a v-if="city.link !== ''" :href="city.link" class="linktext2"> Mehr Informationen </a></td>
+      </tr>
+      </tbody>
+    </table>
     <p v-else>Leider keine passenden Ergebnisse gefunden!</p>
   </div>
 </template>
@@ -45,13 +47,15 @@ export default defineComponent({
     const loading = ref<boolean>(true);
 
     const searchTextChanged = () => {
+      loading.value = false;
       searchResult();
+      loading.value = true;
     };
 
     const searchResult = () => {
       loading.value = false;
 
-      if (searchText.value != '' && searchText.value && searchText.value.length>0) {
+      if (searchText.value != '' && searchText.value && searchText.value.length > 0) {
         setTimeout(() => {
           loading.value = true;
         }, 950);
@@ -61,18 +65,16 @@ export default defineComponent({
               .toUpperCase()
               .includes(searchText.value.toUpperCase())
         })
-      }
-      else{
+      } else {
+        loading.value = true;
         tempEvents = content;
       }
       loading.value = false;
-      console.log("Value changed!", tempEvents);
       return tempEvents
     };
 
-    const Events = computed(()=>{
+    const Events = computed(() => {
       loading.value;
-      console.log("Computed!", tempEvents);
       return tempEvents;
     })
 
@@ -90,9 +92,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.searchContainer{
+.searchContainer {
   width: 50%;
-  margin-top:120px;
+  margin-top: 120px;
   margin-bottom: 2%;
 }
 
@@ -101,49 +103,54 @@ export default defineComponent({
   text-decoration: none;
 }
 
-@media (min-width: 320px)  {
-  .searchContainer{
-    width: 100%;
-    margin-top:120px;
-    margin-bottom: 2%;
-  }
+.linktext2{
+  color: #387046;
 }
-@media (min-width: 425px)  {
-  .searchContainer{
-    width: 90%;
-    margin-top:120px;
+
+@media (min-width: 320px) {
+  .searchContainer {
+    width: 100%;
+    margin-top: 120px;
     margin-bottom: 2%;
   }
 }
 
-@media (min-width: 768px)  {
-  .searchContainer{
+@media (min-width: 425px) {
+  .searchContainer {
+    width: 90%;
+    margin-top: 120px;
+    margin-bottom: 2%;
+  }
+}
+
+@media (min-width: 768px) {
+  .searchContainer {
     width: 70%;
-    margin-top:110px;
+    margin-top: 110px;
     margin-bottom: 2%;
   }
 }
 
 @media (min-width: 992px) {
-  .searchContainer{
+  .searchContainer {
     width: 50%;
-    margin-top:95px;
+    margin-top: 95px;
     margin-bottom: 2%;
   }
 }
 
-@media (min-width: 1200px)  {
-  .searchContainer{
+@media (min-width: 1200px) {
+  .searchContainer {
     width: 50%;
-    margin-top:95px;
+    margin-top: 95px;
     margin-bottom: 2%;
   }
 }
 
-@media (min-width: 1400px)  {
-  .searchContainer{
+@media (min-width: 1400px) {
+  .searchContainer {
     width: 50%;
-    margin-top:100px;
+    margin-top: 100px;
     margin-bottom: 2%;
   }
 }

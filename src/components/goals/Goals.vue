@@ -243,7 +243,6 @@ export default defineComponent({
     const expanded = ref<boolean[]>([false, false, false, false, false, false, false]);
 
     const toggleContent = (index: number) => {
-      console.log()
       for(var i=0; i < expanded.value.length; i++){
         if(expanded.value[i] === true){
           isShow.value[i] = 'noShow';
@@ -262,8 +261,6 @@ export default defineComponent({
     })
 
     const width = computed(() => windowWidth.value)
-
-    console.log(type)
 
     return {
       width,

@@ -39,7 +39,6 @@ export default defineComponent({
     })
 
     const width = computed(() => windowWidth.value)
-    console.log(type)
 
     const status = ref<string>("Home");
     const collapse = ref<string>('collapse');

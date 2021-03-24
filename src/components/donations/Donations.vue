@@ -358,7 +358,6 @@ export default defineComponent({
 
     const updateComponent = (value: string) => {
       selectedComponent.value = value;
-      console.log(selectedComponent.value);
       return selectedComponent.value
     }
 
