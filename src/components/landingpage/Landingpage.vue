@@ -169,9 +169,9 @@ export default defineComponent({
 
 @media (min-width: 768px)  {
   .bigPic{
-    width: 768px;
-    height: 400px;
-    margin-top: -80px;
+    width: 100%;
+    height: 500px;
+    margin-top: -350px;
   }
   .eisbärPic{
     height: 430px;
@@ -187,9 +187,9 @@ export default defineComponent({
 
 @media (min-width: 992px) {
   .bigPic{
-    width: 992px;
-    height: 450px;
-    margin-top: -80px;
+    width: 100%;
+    height: 600px;
+    margin-top: -400px;
   }
   .eisbärPic{
     height: 450px;
@@ -205,9 +205,9 @@ export default defineComponent({
 
 @media (min-width: 1200px)  {
   .bigPic{
-    width: 1200px;
-    height: 550px;
-    margin-top: -80px;
+    width: 100%;
+    height: 600px;
+    margin-top: -400px;
   }
   .eisbärPic{
     height: 550px;
@@ -224,9 +224,9 @@ export default defineComponent({
 
 @media (min-width: 1400px)  {
   .bigPic{
-    width: 1400px;
-    height: 600px;
-    margin-top: -80px;
+    width: 100%;
+    height: 800px;
+    margin-top: -400px;
   }
   .eisbärPic{
     height: 650px;

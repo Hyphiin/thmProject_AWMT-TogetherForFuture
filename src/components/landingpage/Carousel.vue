@@ -1,7 +1,7 @@
 <template>
   <div class="container d-flex justify-content-center align-items-center">
     <div class="carouselBanner carouselText text-center justify-content-center align-items-center">
-      <h3 class="text-white pt-2">Nächste Demo am 19.03. in deiner Nähe! :</h3>
+      <h5 class="text-white pt-2">Nächste Demo am 19.03. in deiner Nähe! :</h5>
     </div>
   </div>
   <div id="carouselExampleControls" class="container-md carousel slide carouselDiv" data-bs-ride="carousel">
@@ -90,18 +90,21 @@ export default defineComponent({
   margin-top: 10px;
   color: white;
   margin-bottom: 50px;
+  z-index: 5;
 }
 
 .carouselText {
   margin-top: 50px;
+  z-index: 5;
 }
 
 .carouselBanner {
-  height: 50px;
+  height: 40px;
   width: 600px;
   background-color: #67bb7d;
   box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.25);
   border-radius: 49px;
+  z-index: 5;
 }
 
 .pointerDiv {
@@ -111,11 +114,16 @@ export default defineComponent({
 .carouselRound{
   box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+  height:98px;
 }
 
 .linktext {
   color: #67bb7d;
   text-decoration: none;
+}
+
+.border {
+   border: 1px solid #de4251!important;
 }
 
 @media (min-width: 320px) {
@@ -140,7 +148,7 @@ export default defineComponent({
     margin-top: 60px;
   }
   .carouselBanner {
-    height: 50px;
+    height: 40px;
     width: 600px;
   }
 }
