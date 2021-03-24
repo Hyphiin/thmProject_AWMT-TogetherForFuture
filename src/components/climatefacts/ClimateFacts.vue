@@ -41,8 +41,8 @@
         <div class="dreieck"></div>
       </div>
       <div class="row mx-auto block">
-        <div class="col description-pic text-center">
-          <img src="../../assets/images/1920-blog-RSwwfau_13611-c-Julie-Fletcher-WWF-Australia.jpg" class="site-pic"
+        <div class="col description-pic text-center koala-pic">
+          <img src="../../assets/images/1920-blog-RSwwfau_13611-c-Julie-Fletcher-WWF-Australia.jpg" class="site-pic "
                alt="Corona-Klima">
         </div>
         <div class="col description-text">
@@ -206,6 +206,7 @@ div.dreieck2 {
 .description-pic{
   text-align: left;
   padding: 2%;
+  margin-top: 10px;
 }
 
 .facts {
@@ -227,6 +228,9 @@ div.dreieck2 {
   color: #67bb7d;
   text-decoration: none;
 }
+.koala-pic{
+  padding-top: 80px;
+}
 
 @media (min-width: 320px) {
   .bigPic {
@@ -247,6 +251,12 @@ div.dreieck2 {
     border-right: 296px solid #67bb7d8a;
     border-left: 0 solid transparent;
     margin-bottom: 0;
+  }
+  .description-pic{
+    margin-top: 0;
+  }
+  .koala-pic{
+    padding-top: 20px;
   }
 }
 
@@ -270,6 +280,12 @@ div.dreieck2 {
     border-left: 0 solid transparent;
     margin-bottom: 0;
   }
+  .description-pic{
+    margin-top: 0;
+  }
+  .koala-pic{
+    padding-top: 20px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -287,6 +303,16 @@ div.dreieck2 {
     border-right: 696px solid #67bb7d8a;
     border-left: 0 solid transparent;
     margin-bottom: 0;
+  }
+  .site-pic {
+    width: 550px;
+    margin-top: 0;
+  }
+  .description-pic{
+    margin-top: 10px;
+  }
+  .koala-pic{
+    padding-top: 10px;
   }
 }
 
@@ -306,6 +332,13 @@ div.dreieck2 {
     border-left: 0 solid transparent;
     margin-bottom: 0;
   }
+  .site-pic {
+    width: 400px;
+    margin-top: 70px;
+  }
+  .koala-pic{
+    padding-top: 120px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -324,6 +357,13 @@ div.dreieck2 {
     border-left: 0 solid transparent;
     margin-bottom: 0;
   }
+  .site-pic {
+    width: 500px;
+    margin-top: 30px;
+  }
+  .koala-pic{
+    padding-top: 100px;
+  }
 }
 
 @media (min-width: 1400px) {
@@ -341,6 +381,13 @@ div.dreieck2 {
     border-right: 1296px solid #67bb7d8a;
     border-left: 0 solid transparent;
     margin-bottom: 0;
+  }
+  .site-pic {
+    width: 550px;
+    margin-top: 10px;
+  }
+  .koala-pic{
+    padding-top: 80px;
   }
 }
 </style>

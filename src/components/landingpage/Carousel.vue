@@ -1,17 +1,21 @@
 <template>
-  <div id="carouselExampleControls" class=" container-md carousel slide carouselDiv" data-bs-ride="carousel">
-    <div class="carousel-inner bg-danger bg-gradient">
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="carouselBanner carouselText text-center justify-content-center align-items-center">
+      <h3 class="text-white pt-1">Nächste Demo am 19.03. in deiner Nähe! :</h3>
+    </div>
+  </div>
+  <div id="carouselExampleControls" class="container-md carousel slide carouselDiv" data-bs-ride="carousel">
+    <div class="carousel-inner bg-danger bg-gradient carouselRound ">
       <div class="carousel-item " :class="latestPic">
-          <div class="container d-flex justify-content-center p-4 infoContainer border">
-            <div class="row d-flex justify-content-center pe-auto">
-              <div @click="updateStatus('Bot')" >
-                <p>Nächste Demo in deiner Nähe:</p>
-                <strong class="pointerDiv"> {{ content[counter].city + content[counter].place }} </strong>
-                <br>
-                <a v-if="content[counter].link !== ''" :href="content[counter].link"> Mehr Informationen </a>
-              </div>
+        <div class="container d-flex justify-content-center p-4 infoContainer border">
+          <div class="row d-flex justify-content-center pe-auto">
+            <div @click="updateStatus('Bot')">
+              <strong class="pointerDiv"> {{ content[counter].city + content[counter].place }} </strong>
+              <br>
+              <a v-if="content[counter].link !== ''" :href="content[counter].link" class="linktext"> Mehr Informationen </a>
             </div>
           </div>
+        </div>
       </div>
     </div>
     <button @click="prevItem" class="carousel-control-prev" type="button">
@@ -75,47 +79,98 @@ export default defineComponent({
 
 <style lang="css" scoped>
 
-.carouselDiv{
-  margin-top: 100px;
-  color:white;
+.carouselDiv {
+  margin-top: 10px;
+  color: white;
+  margin-bottom: 50px;
+}
+
+.carouselText {
+  margin-top: 50px;
+}
+
+.carouselBanner {
+  height: 50px;
+  width: 600px;
+  background-color: #67bb7d;
+  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 49px;
 }
 
 .pointerDiv {
   cursor: pointer;
 }
 
-@media (min-width: 320px)  {
-  .carouselDiv{
-    margin-top: 110px;
-  }
+.carouselRound{
+  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
 }
-@media (min-width: 425px)  {
-  .carouselDiv{
-    margin-top: 110px;
+
+.linktext {
+  color: #67bb7d;
+  text-decoration: none;
+}
+
+@media (min-width: 320px) {
+  .carouselDiv {
+    margin-top: 5px;
+  }
+  .carouselText {
+    margin-top: 60px;
+  }
+  .carouselBanner {
+    height: 70px;
+    width: 320px;
+    margin-bottom: 10px;
   }
 }
 
-@media (min-width: 768px)  {
-  .carouselDiv{
-    margin-top: 105px;
+@media (min-width: 425px) {
+  .carouselDiv {
+    margin-top: 5px;
+  }
+  .carouselText {
+    margin-top: 60px;
+  }
+  .carouselBanner {
+    height: 50px;
+    width: 600px;
+  }
+}
+
+@media (min-width: 768px) {
+  .carouselDiv {
+    margin-top: 5px;
+  }
+  .carouselText {
+    margin-top: 55px;
   }
 }
 
 @media (min-width: 992px) {
-  .carouselDiv{
-    margin-top: 100px;
+  .carouselDiv {
+    margin-top: 5px;
+  }
+  .carouselText {
+    margin-top: 50px;
   }
 }
 
-@media (min-width: 1200px)  {
-  .carouselDiv{
-    margin-top: 100px;
+@media (min-width: 1200px) {
+  .carouselDiv {
+    margin-top: 5px;
+  }
+  .carouselText {
+    margin-top: 50px;
   }
 }
 
-@media (min-width: 1400px)  {
-  .carouselDiv{
-    margin-top: 100px;
+@media (min-width: 1400px) {
+  .carouselDiv {
+    margin-top: 5px;
+  }
+  .carouselText {
+    margin-top: 50px;
   }
 }
 
