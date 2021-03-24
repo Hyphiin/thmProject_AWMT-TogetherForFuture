@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container-fluid half-height">
-      <a class="navbar-brand col-md-2" :class="logoMove" href="#" @click="updateStatus('Home')">
+      <a class="navbar-brand col-md-2" :class="logoMove" href="#" @click="updateStatus('Home'); updateActive(5)">
         <img src="../assets/images/logos/TogetherForFuture_Logo.png" class="d-inline-block align-top" alt="Logo"/>
       </a>
       <button class="navbar-toggler mb-5" :class="togglerMove" type="button" @click="togglerClicked()" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -10,11 +10,11 @@
       </button>
       <div class="navbar-collapse" :class="collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav offset-md-5">
-          <a class="nav-link text-white h5" href="#/Ziele" @click="updateStatus('Goals');togglerClicked()" >Unsere Ziele</a>
-          <a class="nav-link text-white h5" href="#/Projekts" @click="updateStatus('Projects');togglerClicked()">Projekte & Kooperationen</a>
-          <a class="nav-link text-white h5" href="#/Team" @click="updateStatus('Team');togglerClicked()">Das Team</a>
-          <a class="nav-link text-white h5" href="#/Fakten" @click="updateStatus('Facts');togglerClicked()">Klimafakten</a>
-          <a class="nav-link text-white h5" href="#/Spenden" @click="updateStatus('Donation');togglerClicked()">Spenden</a>
+          <a class="nav-link h5" :class="active[0]" href="#/Ziele" @click="updateStatus('Goals');togglerClicked(); updateActive(0)" >Unsere Ziele</a>
+          <a class="nav-link h5" :class="active[1]" href="#/Projekts" @click="updateStatus('Projects');togglerClicked(); updateActive(1)">Projekte & Kooperationen</a>
+          <a class="nav-link h5" :class="active[2]" href="#/Team" @click="updateStatus('Team');togglerClicked(); updateActive(2)">Das Team</a>
+          <a class="nav-link h5" :class="active[3]" href="#/Fakten" @click="updateStatus('Facts');togglerClicked(); updateActive(3)">Klimafakten</a>
+          <a class="nav-link h5" :class="active[4]" href="#/Spenden" @click="updateStatus('Donation');togglerClicked(); updateActive(4)">Spenden</a>
         </div>
       </div>
     </div>
@@ -46,6 +46,8 @@ export default defineComponent({
     const logoMove = ref<string>('logoMove');
     const togglerMove = ref<string>('togglerMove');
 
+    const active = ref<string[]>(['','','','','','']);
+
     const updateStatus = (label: string) => {
       status.value = label;
       context.emit('clicked', status.value);
@@ -66,6 +68,18 @@ export default defineComponent({
       }
     }
 
+    const updateActive = (index: number) => {
+      if (active.value[index] === 'clicked') {
+        active.value[index] = 'inactive';
+      } else {
+        for(var i=0; i < active.value.length; i++){
+          active.value[i] = 'inactive';
+        }
+        active.value[index] = 'clicked';
+      }
+      console.log(active.value[index])
+    }
+
     return{
       status,
       updateStatus,
@@ -73,7 +87,9 @@ export default defineComponent({
       collapse,
       width,
       logoMove,
-      togglerMove
+      togglerMove,
+      updateActive,
+      active
     }
   }
 })
@@ -95,6 +111,15 @@ nav {
 .nav-link{
   padding: 0;
   padding-top: 10px;
+  color: white;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
+ color: #387046;
+}
+
+.navbar-light .navbar-nav .nav-link{
+  color: white;
 }
 
 .navbar-brand{
@@ -104,6 +129,15 @@ nav {
 .half-height{
   height: 50px;
 }
+
+.clicked{
+  color: #387046;
+}
+
+.inactive{
+  color: white;
+}
+
 
 .logoMove{
   margin-left:17px;

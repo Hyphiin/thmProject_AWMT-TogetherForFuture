@@ -1,7 +1,7 @@
 <template>
   <div class="container d-flex justify-content-center align-items-center">
     <div class="carouselBanner carouselText text-center justify-content-center align-items-center">
-      <h3 class="text-white pt-1">Nächste Demo in deiner Nähe:</h3>
+      <h3 class="text-white pt-1">Nächste Demo am 19.03. in deiner Nähe! :</h3>
     </div>
   </div>
   <div id="carouselExampleControls" class="container-md carousel slide carouselDiv" data-bs-ride="carousel">
@@ -84,7 +84,7 @@ export default defineComponent({
 <style lang="css" scoped>
 
 .carouselDiv {
-  margin-top: 20px;
+  margin-top: 10px;
   color: white;
   margin-bottom: 50px;
 }
@@ -107,7 +107,7 @@ export default defineComponent({
 
 .carouselRound{
   box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.25);
-  border-radius: 49px;
+  border-radius: 20px;
 }
 
 .linktext {
@@ -117,7 +117,7 @@ export default defineComponent({
 
 @media (min-width: 320px) {
   .carouselDiv {
-    margin-top: 25px;
+    margin-top: 5px;
   }
   .carouselText {
     margin-top: 60px;
@@ -131,7 +131,7 @@ export default defineComponent({
 
 @media (min-width: 425px) {
   .carouselDiv {
-    margin-top: 25px;
+    margin-top: 5px;
   }
   .carouselText {
     margin-top: 60px;
@@ -144,7 +144,7 @@ export default defineComponent({
 
 @media (min-width: 768px) {
   .carouselDiv {
-    margin-top: 23px;
+    margin-top: 5px;
   }
   .carouselText {
     margin-top: 55px;
@@ -153,7 +153,7 @@ export default defineComponent({
 
 @media (min-width: 992px) {
   .carouselDiv {
-    margin-top: 20px;
+    margin-top: 5px;
   }
   .carouselText {
     margin-top: 50px;
@@ -162,7 +162,7 @@ export default defineComponent({
 
 @media (min-width: 1200px) {
   .carouselDiv {
-    margin-top: 20px;
+    margin-top: 5px;
   }
   .carouselText {
     margin-top: 50px;
@@ -171,7 +171,7 @@ export default defineComponent({
 
 @media (min-width: 1400px) {
   .carouselDiv {
-    margin-top: 20px;
+    margin-top: 5px;
   }
   .carouselText {
     margin-top: 50px;
