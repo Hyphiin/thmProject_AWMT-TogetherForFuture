@@ -138,6 +138,7 @@ export default defineComponent({
     width: 1400px;
     height: auto;
     margin-top: -80px;
+    border-radius: 10px;
   }
 
   div.dreieck {
@@ -166,6 +167,7 @@ export default defineComponent({
   .description-pic{
     text-align: left;
     padding: 2%;
+
   }
 
   .facts {
@@ -176,6 +178,7 @@ export default defineComponent({
   .site-pic {
     width: 550px;
     height: auto;
+    border-radius: 10px;
   }
 
   .block {

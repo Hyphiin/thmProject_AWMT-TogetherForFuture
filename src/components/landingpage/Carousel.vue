@@ -1,7 +1,7 @@
 <template>
   <div class="container d-flex justify-content-center align-items-center">
     <div class="carouselBanner carouselText text-center justify-content-center align-items-center">
-      <h3 class="text-white pt-1">Nächste Demo am 19.03. in deiner Nähe! :</h3>
+      <h3 class="text-white pt-2">Nächste Demo am 19.03. in deiner Nähe! :</h3>
     </div>
   </div>
   <div id="carouselExampleControls" class="container-md carousel slide carouselDiv" data-bs-ride="carousel">

@@ -285,6 +285,7 @@ export default defineComponent({
   width: 1400px;
   height: 650px;
   margin-top: -40px;
+  border-radius: 10px;
 }
 
 .linktext {

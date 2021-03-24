@@ -43,23 +43,14 @@
 
     <div class="card">
       <div class="container">
-      <img src="../../assets/images/Icebear.jpg" class="eisbärPic" alt="...">
-    <!--Eisbärding-->
-    <div class="container d-flex justify-content-center mt-5">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="../../assets/images/Icebear.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title fw-bold">Klima oder doch Wetter?</h5>
-          <p class="card-text">Alles was du über die Klimakrise wissen musst!</p>
-          <a href="#/Klimafakten" @click="startFacts" class="btn btn-primary" style="background-color: #67bb7d">Jetzt Lesen!</a>
-        </div>
-      </div>
+        <img src="../../assets/images/Icebear.jpg" class="eisbärPic" alt="...">
       <div class="card-img-overlay eisbärContainer container">
         <h5 class="card-title"><strong>Klima oder doch Wetter?</strong></h5>
         <p class="card-text">Alles was du über die Klimakrise wissen musst!</p>
-        <a href="#/Spenden" @click="startDonation" class="btn text-white btnEisbär" style="background-color: #67bb7d">Spenden</a>
+        <a href="#/Klimafakten" @click="startFacts" class="btn text-white" style="background-color: #67bb7d">Jetzt Lesen!</a>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -110,7 +101,8 @@ export default defineComponent({
   width: 1400px;
   height: 650px;
   margin-top: -80px;
-  transform:scaleX(-1)
+  transform:scaleX(-1);
+  border-radius: 10px;
 }
 .eisbärContainer{
   background-color: #F5F5F5;
@@ -125,6 +117,7 @@ export default defineComponent({
   height: 650px;
   width: 1200px;
   margin-top: 15px;
+  border-radius: 10px;
 }
 
 .card{

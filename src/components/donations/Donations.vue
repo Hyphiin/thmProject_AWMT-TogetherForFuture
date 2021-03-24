@@ -409,6 +409,7 @@ export default defineComponent({
 .testimonial-pic {
   height: 200px;
   width: auto;
+  border-radius: 10px;
 }
 
 .zertifikat-img {
@@ -494,6 +495,7 @@ div.dreieck2 {
   width: 1400px;
   height: 700px;
   margin-top: -120px;
+  border-radius: 10px;
 }
 
 .linktext {
