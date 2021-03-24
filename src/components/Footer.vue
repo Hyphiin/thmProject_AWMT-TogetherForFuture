@@ -82,15 +82,15 @@
           <!-- Section: Bottom Bar -->
           <section class="row gx-5">
             <div class="col mx-4 my-2">
-            <a class="text-white" href="#/Kontakt" @click="updateStatus('Kontakt')">Kontakt</a></div>
+            <a class="text-white link" href="#/Kontakt" @click="updateStatus('Kontakt')">Kontakt</a></div>
             <div class="col mx-4 my-2">
-            <a class="text-white" href="#/Presse" @click="updateStatus('Presse')">Presse</a></div>
+            <a class="text-white link" href="#/Presse" @click="updateStatus('Presse')">Presse</a></div>
             <div class="col mx-4 my-2">
-            <a class="text-white" href="#/Impressum" @click="updateStatus('Impressum')">Impressum</a></div>
+            <a class="text-white link" href="#/Impressum" @click="updateStatus('Impressum')">Impressum</a></div>
             <div class="col mx-4 my-2">
-            <a class="text-white" href="#/Datenschutzerklärung" @click="updateStatus('Datenschutzerklärung')">Datenschutzerklärung</a></div>
+            <a class="text-white link" href="#/Datenschutzerklärung" @click="updateStatus('Datenschutzerklärung')">Datenschutzerklärung</a></div>
             <div class="col mx-4 my-2">
-            <a class="text-white" href="#/Transparenz" @click="updateStatus('Transparenz')">Transparenz</a></div>
+            <a class="text-white link" href="#/Transparenz" @click="updateStatus('Transparenz')">Transparenz</a></div>
           </section>
           <!-- Section: Bottom Bar -->
         </div>
