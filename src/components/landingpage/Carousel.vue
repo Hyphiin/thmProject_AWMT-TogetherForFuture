@@ -50,6 +50,11 @@ export default defineComponent({
         }
     };
 
+    setInterval(function() {
+      // alle 3 Sekunden ausführen
+      nextItem();
+    }, 3000);
+
     const prevItem = () => {
       if (counter.value > 0) {
         counter.value--;
@@ -64,13 +69,15 @@ export default defineComponent({
       return status.value;
     };
 
+
     return {
       content,
       latestPic,
       nextItem,
       counter,
       prevItem,
-      updateStatus
+      updateStatus,
+      setInterval
     }
   }
 
