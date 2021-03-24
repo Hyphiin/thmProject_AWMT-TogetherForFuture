@@ -75,7 +75,7 @@
         </div>
         <!--Text rechts-->
 
-        <div v-if="selectedComponent==='start' " class="container justify-content-center infoContainerRight border col">
+        <div v-if="selectedComponent==='start' " class="container  infoContainerRight border col">
           <ul class="list-unstyled">
             <div class="col p-5">
               <h5 class="light-bg text-white">
@@ -423,6 +423,7 @@ export default defineComponent({
 
 .btn-back{
   margin-bottom: -20px;
+  margin-top:80px;
 }
 
 .active{
@@ -438,8 +439,8 @@ export default defineComponent({
 .infoContainerRight {
   box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  margin: 20px;
   height: 750px;
+  margin:20px;
 }
 
 
@@ -519,6 +520,9 @@ div.dreieck2 {
     border-right: 0 solid transparent;
     margin-left: -60px;
   }
+  .infoContainerRight{
+    margin:0;
+  }
 }
 
 @media (min-width: 425px) {
@@ -570,6 +574,7 @@ div.dreieck2 {
     border-right: 0 solid transparent;
     margin-left: 10px;
   }
+
 }
 
 @media (min-width: 1200px) {
@@ -585,6 +590,9 @@ div.dreieck2 {
     border-left: 500px solid #67bb7d8a;
     border-right: 0 solid transparent;
     margin-left: 0;
+  }
+  .infoContainerRight{
+    margin:20px;
   }
 }
 
